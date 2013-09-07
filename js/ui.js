@@ -69,6 +69,12 @@ function colorControls() {
 	}
 }
 
+
+function updateControls() {
+	ctx.clearRect(500, 650, 200, 50);
+	console.log('did');
+}
+
 /* G: Graph */
 function updateColors(G) {
 
@@ -116,9 +122,17 @@ function setLocs(i) {
 
 /* MOUSE EVENT */
 function onMouseDown(event) {
-    var x = event.pageX - canvas.offsetLeft;  // do not use event.x, it's not cross-browser!!!
+    var x = event.pageX - canvas.offsetLeft; 
     var y = event.pageY - canvas.offsetTop;
     
+    /* Check if Toggle Color Controls */
+    for(var i = 1; i < colors.length; i++) {
+    	if(inCircle(x, y, 700 - 34*i, 670, cRadius)) {
+    		console.log(colors[i]);
+    		updateControls();
+    	}
+    }
+
     console.log("Clicked!");
 }
 canvas.addEventListener('mousedown', onMouseDown, false);
