@@ -12,7 +12,7 @@ function Game() {
 
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#666666", "#FF6347", "#2ADCCB", "#9ACD32", "#FFA500", "#6A5ACD"];
-var radius = 10;
+var radius = 30;
 var cRadius = 10;
 var line = 10;
 
@@ -261,13 +261,13 @@ function updateTime() {
 }
  
 function winGame() {
-	ctx.fillRect(0,0,700,700);
-	ctx.fillStyle = "white";
-	ctx.font = "60px Arial";
-	ctx.textAlign = "center";
-	ctx.fillText("You Did It!", 350, 200);
-	ctx.font = "40px Arial";
-	ctx.fillText("Get ready for the next board", 350, 400);
+	// ctx.fillRect(0,0,700,700);
+	// ctx.fillStyle = "white";
+	// ctx.font = "60px Arial";
+	// ctx.textAlign = "center";
+	// ctx.fillText("You Did It!", 350, 200);
+	// ctx.font = "40px Arial";
+	// ctx.fillText("Get ready for the next board", 350, 400);
 
 	setTimeout(function() {
 		game.level ++;
