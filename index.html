@@ -5,7 +5,7 @@
   <title>Colors</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
-  <!--<script type="text/javascript" src="scripts.js"></script>-->
+  <script type="text/javascript" src="js/login.js"></script>
 </head>
 
 <body>
@@ -27,8 +27,10 @@
   FB.Event.subscribe('auth.authResponseChange', function(response) {
     // Here we specify what we do with the response anytime this event occurs. 
     if (response.status === 'connected') {
-      alert("Connected!");
-      testAPI();
+      FB.api('/me', function(response) {
+        loginSuccess(response);
+      });
+      
   } else if (response.status === 'not_authorized') {
       // In this case, the person is logged into Facebook, but not into the app, so we call
       // FB.login() to prompt them to do so. 
@@ -64,8 +66,8 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Good to see you, ' + response.name + '.');
-  });
-}
+    });
+  }
 </script>
 
 
