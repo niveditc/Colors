@@ -13,13 +13,13 @@ function loginSuccess(user) {
 
     console.log(colorsUser.name);
 
-    window.location = "colors.html";
+    window.location = "colors.php";
         // Make this fancier, eventually.
 }
 
 function logout() {
-    window.location = "index.html";
-    
+    window.location = "index.php";
+
     FB.logout(function(response) {
         localStorage.removeItem("COLORSUserName");
         localStorage.removeItem("COLORSUserID");
