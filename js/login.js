@@ -16,8 +16,11 @@ function loginSuccess(user) {
 }
 
 function logout() {
+    window.location = "index.html";
+    
     FB.logout(function(response) {
         localStorage.removeItem("COLORSUserName");
         localStorage.removeItem("COLORSUserID");
+
     });
 }

@@ -11,10 +11,10 @@ function Game() {
 }
 
 /* grey (default), red, blue, green, orange, purple */
-var colors = ["#D0D0D0", "#FF6347", "#2ADCCB", "#9ACD32", "#FFA500", "#6A5ACD"];
+var colors = ["#666666", "#FF6347", "#2ADCCB", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
-var cRadius = 13;
-var line = 1;
+var cRadius = 10;
+var line = 10;
 
 var game = new Game();
 var canvas = document.getElementById("myCanvas");
@@ -56,7 +56,7 @@ function renderFirstGraph(G) {
 	//draw graph edges
 	for(var i = 0; i < G.numVertices; i++) {
 		ctx.lineWidth = line;
-		ctx.strokeStyle = "#666666";
+		ctx.strokeStyle = "#D0D0D0";
 
 		var currVertex = G.vertices[i];
 		var numNeighbors = currVertex.neighbors.length;
