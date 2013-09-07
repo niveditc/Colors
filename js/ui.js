@@ -4,10 +4,13 @@ var ctx = canvas.getContext("2d");
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
+var cRadius = 14;
 var line = 1;
 
 function circle(ctx, cx, cy, radius) {
+	ctx.beginPath();
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
+    ctx.closePath();
 }
 
 renderFirstGraph(G1);
@@ -48,6 +51,15 @@ function renderFirstGraph(G) {
 	}
 
 	updateColors(G);
+	colorControls();
+}
+
+function colorControls() {
+	for(var i = 1; i < colors.length; i++) {
+		ctx.fillStyle = colors[colors.length - i];
+		circle(ctx, 700 - 34*i, 670, cRadius);
+		ctx.fill();
+	}
 }
 
 /* G: Graph */
@@ -60,7 +72,6 @@ function updateColors(G) {
 			console.log(V.color);
 			ctx.fillStyle = colors[V.color];
 
-			ctx.beginPath();
 			var cx = V.loc.x;
 			var cy = V.loc.y;
 			circle(ctx, cx, cy, radius);
@@ -83,7 +94,7 @@ function setLocs(i) {
 	for(var j = 0; j < i; j++) {
 
 		var angle = j*deg;
-		var rad = Math.floor(Math.random()* 200) + 130;
+		var rad = Math.floor(Math.random()* 140) + 180;
 
 		/* use trig to find position from (350, 350) */
 		var changeX = rad * Math.cos(angle);
@@ -96,3 +107,19 @@ function setLocs(i) {
 	return locArray;
 }
 
+/* MOUSE EVENT */
+function onMouseDown(event) {
+    var x = event.pageX - canvas.offsetLeft;  // do not use event.x, it's not cross-browser!!!
+    var y = event.pageY - canvas.offsetTop;
+    
+    /* Check if Toggle Color Controls */
+    if()
+}
+canvas.addEventListener('mousedown', onMouseDown, false);
+
+/* x1, y1 testing point, x2, y2 center circle, r radius */
+function inCircle(x1, y1, x2, y2, r) {
+	var square_dist = Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2);
+    return (square_dist <= Math.pow(r, 2));
+}
+ 
