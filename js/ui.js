@@ -6,8 +6,6 @@ var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
 var line = 2;
 
-renderFirstGraph(G3);
-
 function circle(ctx, cx, cy, radius) {
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
 }
