@@ -1,7 +1,14 @@
 function Vertex(index){
-	this.index = index;
+    this.index = index;
     this.neighbors = [];
     this.color = 0;
+}
+
+//mainly for testing
+function Vertex(index, neighbors, color){
+    this.index = index;
+    this.neighbors = neighbors;
+    this.color = color;
 }
 
 function Graph(numVertices) {
@@ -34,7 +41,7 @@ function allColored(G) {
 	});
 
 	return true;
-} 
+}
 
 /* G: Graph, v: vertex index, c: color index */
 function updateColor(G, v, c) {
