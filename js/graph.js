@@ -63,14 +63,10 @@ function areNeighbors(v1, v2) {
 }
 
 function shouldJoinWithEdge(v1, v2) {
-    var maxDegree = 3;
-
     if (v1.isEqual(v2) === true) {
-        console.log("1");
         return false;
     }
     if (areNeighbors(v1, v2) === true) {
-        console.log("2");
         return false;
     }
 
@@ -86,14 +82,13 @@ function joinWithEdge(v1, v2) {
 function twoRandVertices(graph) {
     var numVertices = graph.vertices.length;
     function randNum() {
-        return Math.floor((Math.random()*(numVertices-1)));
+        return Math.floor((Math.random()*numVertices));
     }
 
     var i1 = randNum();
     var i2 = randNum();
     while (i2 === i1) {
         i2 = randNum();
-        console.log("DEATH");
     }
 
     var v1 = graph.vertices[i1];
@@ -103,11 +98,15 @@ function twoRandVertices(graph) {
 }
 
 function generateGraph(numVertices, numEdges) {
+    if (numEdges < numVertices) {
+        console.error("ArRRRRGH!");
+        return null;
+    }
+
     var graph = new Graph(numVertices);
     var edgeCount = 0;
 
     while (edgeCount < numEdges) {
-        console.log("HWLLOE");
         var vs = twoRandVertices(graph);
         var v1 = vs[0];
         var v2 = vs[1];
@@ -118,18 +117,18 @@ function generateGraph(numVertices, numEdges) {
         }
     }
 
-    if (!isConnected(graph) === false) {
-        alert("Go to hell. The graph ain't connected!");
-        return null;
+    if (isConnected(graph) === false) {
+        console.error("Graph not connected! Trying again...");
+        return generateGraph(numVertices, numEdges);
     }
 
     return graph;
 }
 
-var G1 = generateGraph(10, 15);
+var G1 = generateGraph(6, 10);
 console.log(G1.toString());
-// var G2 = generateGraph(100, 60);
-// console.log(G2.toString());
+var G2 = generateGraph(50, 100);
+console.log(G2.toString());
 
 /* G: Graph, V: Vertex */
 function checkNeighbors(G, V) {
