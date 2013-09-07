@@ -93,16 +93,46 @@ function updateColors(G) {
 }
 
 /* i: int (num vertices) // returns: array of points */
-function setRandomLocs(i) {
+function setRandomLocs(G, i) {
+
+	//binary 2d array of placed locations
+	//default all 0s
+	var placeGrid = new Array(8);
+	for (var i = 0; i < 8; i++) {
+		placeGrid[i] = new Array(8);
+	}
+
+	//binary array of placed vertices
+	//default all 0s
+	var placeVertex = newArray(i);
 
 	//start at circle grid 4,4
 	var gridX = 4;
 	var gridY = 4;
 
-	for(int j = 0; j < i; j++) {
-		//pick random pt on edge of circle
-		//add to array
+	//place first vertex in 4,4
+	placeVertex(G, 1, gridX, gridY);
 
-		//move to next location of grid
+	//loop through neighbors
+	var V = G.vertices[1];
+	for(int j = 0; j < V.neighbors.length; j++) {
+		//place in adjacent circles and run again
 	}
+
+	//repeat
+}
+
+/* place vertex of index i at grid location x,y */
+function placeVertex(G, i, x, y) {
+	var p = getRandomEdgePoint(x,y);
+
+	G.vertices[i].loc.x = p.x;
+	G.vertices[i].loc.y = p.y
+	placeGrid[x][y] = 1;
+	placeVertex[i] = 1;
+}
+
+/* x and y places on grid, return point p(x,y) with random degree */
+function getRandomEdgePoint(x, y) {
+
 }
