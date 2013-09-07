@@ -19,6 +19,13 @@ function Graph(numVertices) {
     }
 }
 
+//mainly for testing
+function Graph(vertices){
+    this.numVertices = vertices.length;
+    this.vertices = vertices;
+}
+
+
 /* G: Graph, V: Vertex */
 function checkNeighbors(G, V) {
 
