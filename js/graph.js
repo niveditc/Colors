@@ -65,14 +65,14 @@ function areNeighbors(v1, v2) {
 function shouldJoinWithEdge(v1, v2) {
     var maxDegree = 3;
 
-    if (v1.isEqual(v2) === true)
+    if (v1.isEqual(v2) === true) {
+        console.log("1");
         return false;
-    if (areNeighbors(v1, v2) === true)
+    }
+    if (areNeighbors(v1, v2) === true) {
+        console.log("2");
         return false;
-    if (v1.neighbors.length >= maxDegree)
-        return false;
-    if (v2.neighbors.length >= maxDegree)
-        return false;
+    }
 
     return true;
 }
@@ -83,10 +83,23 @@ function joinWithEdge(v1, v2) {
     v2.neighbors.push(v1.index);
 }
 
-function randVertex(graph) {
+function twoRandVertices(graph) {
     var numVertices = graph.vertices.length;
-    var idx = Math.floor((Math.random()*numVertices));
-    return graph.vertices[idx];
+    function randNum() {
+        return Math.floor((Math.random()*(numVertices-1)));
+    }
+
+    var i1 = randNum();
+    var i2 = randNum();
+    while (i2 === i1) {
+        i2 = randNum();
+        console.log("DEATH");
+    }
+
+    var v1 = graph.vertices[i1];
+    var v2 = graph.vertices[i2];
+    
+    return [v1, v2];
 }
 
 function generateGraph(numVertices, numEdges) {
@@ -94,8 +107,10 @@ function generateGraph(numVertices, numEdges) {
     var edgeCount = 0;
 
     while (edgeCount < numEdges) {
-        var v1 = randVertex(graph)
-        var v2 = randVertex(graph)
+        console.log("HWLLOE");
+        var vs = twoRandVertices(graph);
+        var v1 = vs[0];
+        var v2 = vs[1];
 
         if (shouldJoinWithEdge(v1, v2)) {
             joinWithEdge(v1, v2);
@@ -103,13 +118,18 @@ function generateGraph(numVertices, numEdges) {
         }
     }
 
+    if (!isConnected(graph) === false) {
+        alert("Go to hell. The graph ain't connected!");
+        return null;
+    }
+
     return graph;
 }
 
 var G1 = generateGraph(10, 15);
 console.log(G1.toString());
-var G2 = generateGraph(10, 15);
-console.log(G2.toString());
+// var G2 = generateGraph(100, 60);
+// console.log(G2.toString());
 
 /* G: Graph, V: Vertex */
 function checkNeighbors(G, V) {
