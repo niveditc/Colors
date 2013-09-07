@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "COLVertex.h"
 
+#define VERTEX_RADIUS 10.0f
+
 @interface COLVertexView : UIView
 
 @property (strong, nonatomic) COLVertex *vertex;

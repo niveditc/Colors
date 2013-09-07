@@ -18,6 +18,7 @@
 		6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0B17DAF1270094AC98 /* COLGraph.m */; };
 		6A4FE9E617DBACF800E00982 /* COLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E517DBACF800E00982 /* COLGraphView.m */; };
 		6A4FE9E917DBAEB200E00982 /* COLVertexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E817DBAEB200E00982 /* COLVertexView.m */; };
+		6A4FE9EF17DBC9C000E00982 /* COLEdgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9EE17DBC9C000E00982 /* COLEdgeView.m */; };
 		6A86F0DF17DBA08D003372B7 /* COLStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0DE17DBA08D003372B7 /* COLStartViewController.m */; };
 		6A86F0E317DBA498003372B7 /* COLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0E217DBA498003372B7 /* COLFont.m */; };
 		6A86F0E617DBA5BA003372B7 /* COLGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0E517DBA5BA003372B7 /* COLGameViewController.m */; };
@@ -44,6 +45,8 @@
 		6A4FE9E517DBACF800E00982 /* COLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraphView.m; sourceTree = "<group>"; };
 		6A4FE9E717DBAEB200E00982 /* COLVertexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLVertexView.h; sourceTree = "<group>"; };
 		6A4FE9E817DBAEB200E00982 /* COLVertexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLVertexView.m; sourceTree = "<group>"; };
+		6A4FE9ED17DBC9C000E00982 /* COLEdgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLEdgeView.h; sourceTree = "<group>"; };
+		6A4FE9EE17DBC9C000E00982 /* COLEdgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLEdgeView.m; sourceTree = "<group>"; };
 		6A86F0DD17DBA08D003372B7 /* COLStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLStartViewController.h; sourceTree = "<group>"; };
 		6A86F0DE17DBA08D003372B7 /* COLStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLStartViewController.m; sourceTree = "<group>"; };
 		6A86F0E117DBA498003372B7 /* COLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLFont.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				6A4FE9E517DBACF800E00982 /* COLGraphView.m */,
 				6A4FE9E717DBAEB200E00982 /* COLVertexView.h */,
 				6A4FE9E817DBAEB200E00982 /* COLVertexView.m */,
+				6A4FE9ED17DBC9C000E00982 /* COLEdgeView.h */,
+				6A4FE9EE17DBC9C000E00982 /* COLEdgeView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A4FE9EF17DBC9C000E00982 /* COLEdgeView.m in Sources */,
 				6A4FE9E917DBAEB200E00982 /* COLVertexView.m in Sources */,
 				6A86F0DF17DBA08D003372B7 /* COLStartViewController.m in Sources */,
 				6A046CE317DAEDC70094AC98 /* main.m in Sources */,

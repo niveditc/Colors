@@ -33,7 +33,6 @@
     CGSize selfSize = view.frame.size;
 
     _graphView = [[COLGraphView alloc] initWithFrame:CGRectMake(0, 0, selfSize.width, selfSize.width)];
-    _graphView.backgroundColor = [UIColor yellowColor];
     [view addSubview:_graphView];
     
     self.view = view;
@@ -50,7 +49,7 @@
 {
     [super viewDidLoad];
 
-    COLGraph *graph = [COLGraph randomlyGenerateWithNumVertices:15];
+    COLGraph *graph = [COLGraph randomlyGenerateWithNumVertices:5];
     [_graphView renderGraph:graph];
 }
 

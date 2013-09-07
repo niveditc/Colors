@@ -9,6 +9,7 @@
 #import "COLGraphView.h"
 #import "COLVertexView.h"
 #import "COLVertex.h"
+#import "COLEdgeView.h"
 
 @implementation COLGraphView
 
@@ -62,8 +63,11 @@
 
     for (COLVertex *v1 in self.graph.vertices) {
         for (NSNumber *nghIdx in v1.neighbors) {
-            COLVertex *v2 = [self.graph vertexAtIndex:[nghIdx integerValue]];
-            [v1 drawEdgeToVertex:v2];
+            if ([nghIdx integerValue] > v1.index) {
+                COLVertex *v2 = [self.graph vertexAtIndex:[nghIdx integerValue]];
+                COLEdgeView *edge = [COLEdgeView connect:v1 to:v2];
+                [self addSubview:edge];
+            }
         }
     }
 }

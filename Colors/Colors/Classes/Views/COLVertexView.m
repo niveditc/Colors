@@ -9,7 +9,6 @@
 #import "COLVertexView.h"
 
 #define DEGREES_TO_RADIANS(degrees)  ((M_PI * degrees)/ 180)
-#define VERTEX_RADIUS 10.0f
 
 @implementation COLVertexView
 
