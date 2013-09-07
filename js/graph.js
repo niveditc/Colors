@@ -140,6 +140,7 @@ function allColored(G) {
 /* G: Graph, v: vertex index, c: color index */
 function updateColor(G, v, c) {
 	var V = G.vertices[v];
+	var temp = V.color;
 
 	V.color = c;
 	if(checkNeighbors(G, V)) {
@@ -148,7 +149,7 @@ function updateColor(G, v, c) {
 	}
 	else {
 		/* Alert user error */
-
+		V.color = temp;
 		return false;
 	}
 }

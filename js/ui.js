@@ -25,8 +25,6 @@ $(document).ready(function($) {
 	renderFirstGraph(game.graph);
 });
 
-// renderLevel();
-
 var timeInt = setInterval(function() {updateTime();}, 1000);
 
 function circle(ctx, cx, cy, radius) {
@@ -233,6 +231,14 @@ function onKeyDown(event) {
     		game.paused = true;
     	}
     }
+
+    else if (event.keyCode > 48 && event.keyCode < 58) /* Number Keys */ {
+    	game.time = 45000;
+    	game.level = event.keyCode - 48;
+    	game.graph = generateGraph(game.level + 4);
+		renderFirstGraph(game.graph);
+    	console.log(game.graph.toString());
+    }
 }
 window.addEventListener('keydown', onKeyDown, false);
 
@@ -241,13 +247,6 @@ function inCircle(x1, y1, x2, y2, r) {
 	var square_dist = Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2);
     return (square_dist <= Math.pow(r, 2));
 }
-
-// function renderLevel() {
-// 	ctx.clearRect(600, 0, 100, 40);
-// 	ctx.font = "20px Arial";
-// 	ctx.textAlign = "right";
-// 	ctx.fillText("Level " + game.level, 690, 30);
-// }
 
 function updateTime() {
 	game.time -= 1000;
@@ -261,13 +260,6 @@ function updateTime() {
 }
  
 function winGame() {
-	// ctx.fillRect(0,0,700,700);
-	// ctx.fillStyle = "white";
-	// ctx.font = "60px Arial";
-	// ctx.textAlign = "center";
-	// ctx.fillText("You Did It!", 350, 200);
-	// ctx.font = "40px Arial";
-	// ctx.fillText("Get ready for the next board", 350, 400);
 
 	setTimeout(function() {
 		game.level ++;
