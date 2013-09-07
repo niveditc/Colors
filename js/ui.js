@@ -4,6 +4,7 @@ function Game() {
 	this.level = 1;
 	this.time = 45000;
 	this.paused = false;
+	this.score = 0;
 	this.user = JSON.parse(localStorage.COLORSUser);
 
 	console.log(this.graph.toString());
@@ -89,16 +90,16 @@ function renderFirstGraph(G) {
 }
 
 function colorControls() {
-	ctx.clearRect(420, 650, 300, 250);
+	ctx.clearRect(420, 680, 300, 250);
 
 	for(var i = 1; i < colors.length; i++) {
 		ctx.fillStyle = colors[colors.length - i];
-		circle(ctx, 700 - 50*i, 700, cRadius);
+		circle(ctx, 700 - 50*i, 720, cRadius);
 		ctx.fill();
 
 		/* active color state */
 		if(game.activeColor == colors.length - i) {
-			roundedRect(ctx, 700 - 50*i, 700 - cRadius, 2*cRadius, cRadius);
+			roundedRect(ctx, 700 - 50*i, 720 - cRadius, 2*cRadius, cRadius);
 			console.log('active');
 		}
 
@@ -155,7 +156,7 @@ function onMouseDown(event) {
     
     /* Check if Toggle Color Controls */
     for(var i = 1; i < colors.length; i++) {
-    	if(inCircle(x, y, 700 - 34*i, 670, cRadius)) {
+    	if(inCircle(x, y, 700 - 50*i, 720, cRadius)) {
 			game.activeColor = colors.length - i;
 			console.log(game.activeColor);
 
@@ -280,12 +281,15 @@ function updateTime() {
 }
  
 function winGame() {
+	game.score += calculateScore(game.level, game.graph);
 	game.level ++;
 	game.time += 46000;
 	$('#nextLevelModal').find('h1').html('Level ' + game.level);
+	$('#nextLevelModal').find('h2').html('You scored ' + game.score + ' points');
 	$('#nextLevelModal').fadeIn(60);
 
 	setTimeout(function() {
+		$('#scoreTracker').html('Score: ' + game.score);
 		$('#nextLevelModal').fadeOut(60);
 		game.graph = generateGraph(3 + game.level);
 		renderFirstGraph(game.graph);
@@ -293,5 +297,6 @@ function winGame() {
 }
 
 function gameOver() {
+	$('#endGameModal').find('h2').html('You scored ' + game.score + ' points'); 
 	$('#endGameModal').fadeIn(60);
 }

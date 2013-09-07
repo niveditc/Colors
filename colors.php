@@ -13,7 +13,7 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="js/graph.js"></script>
-  <!-- <script src="js/test.js"></script> -->
+  <script src="js/scoring.js"></script>
 </head>
 
 <body>
@@ -29,12 +29,15 @@
     </div>
   </div>
 
-	<canvas id="myCanvas" width="700" height="730">
+	<canvas id="myCanvas" width="700" height="750">
 		No canvas available!
 	</canvas>
 
+  <h3 id="scoreTracker">Score: 0</h3>
+
   <div id="nextLevelModal" class="modal">
     <h1></h1>
+    <h2></h2>
   </div>
 
   <div id="invalidColorModal" class="modal">
