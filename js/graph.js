@@ -10,3 +10,13 @@ function Graph(numVertices) {
         this.vertices[i] = new Vertex();
     }
 }
+
+
+var verifyColoring = function(g){
+    for(var j = 0; j < g.numVertices; j++){
+        if(!checkNeighbors(g.vertices[i])){
+            return false;
+        }
+    }
+    return true;
+}
