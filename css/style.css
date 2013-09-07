@@ -1,8 +1,28 @@
 body {
-	width: 100%;
-	height: 100%;
     font-family: 'Cabin', sans-serif;
     background-image: url("../img/noisy_grid.png");
+}
+
+#mainTitle {
+    padding-top: 250px;
+    padding-left: 100px;
+    margin: auto;
+}
+
+#mainTitle img {
+    float: left;
+    max-height: 150px;
+}
+#mainTitle h1 {
+    float: left;
+    font-size: 150px;
+    padding-left: 10px;
+}
+
+#loginButton {
+    float: left;
+    padding-top: 50px;
+    padding-left: 200px;
 }
 
 #myCanvas {
