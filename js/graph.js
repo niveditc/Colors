@@ -97,12 +97,8 @@ function twoRandVertices(graph) {
     return [v1, v2];
 }
 
-function generateGraph(numVertices, numEdges) {
-    if (numEdges < numVertices) {
-        console.error("ArRRRRGH!");
-        return null;
-    }
-
+function generateGraph(numVertices) {
+    var numEdges = numVertices;
     var graph = new Graph(numVertices);
     var edgeCount = 0;
 
@@ -125,9 +121,9 @@ function generateGraph(numVertices, numEdges) {
     return graph;
 }
 
-var G1 = generateGraph(20, 30);
+var G1 = generateGraph(15);
 console.log(G1.toString());
-// var G2 = generateGraph(50, 100);
+// var G2 = generateGraph(50);
 // console.log(G2.toString());
 
 /* G: Graph, V: Vertex */
