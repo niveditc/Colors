@@ -18,3 +18,10 @@ function loginSuccess(user) {
         // Make this fancier, eventually.
     }
 }
+
+function logout() {
+    FB.logout(function(response) {
+        localStorage.removeItem("COLORSUserName");
+        localStorage.removeItem("COLORSUserID");
+    });
+}
