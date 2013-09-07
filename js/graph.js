@@ -125,7 +125,7 @@ function generateGraph(numVertices, numEdges) {
     return graph;
 }
 
-var G1 = generateGraph(20, 40);
+var G1 = generateGraph(20, 30);
 console.log(G1.toString());
 // var G2 = generateGraph(50, 100);
 // console.log(G2.toString());
