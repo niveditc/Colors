@@ -110,11 +110,16 @@ function generateGraph(numVertices) {
     return graph;
 }
 
+var G1 = generateGraph(15);
+console.log(G1.toString());
+// var G2 = generateGraph(50);
+// console.log(G2.toString());
+
 /* G: Graph, V: Vertex */
 function checkNeighbors(G, V) {
     for(var j = 0; j < V.neighbors.length; j++){
         var nVertex = G.vertices[V.neighbors[j]];
-        if(V.color == nVertex.color) {
+        if((V.color == nVertex.color) && V.color > 0) {
             return false;
         }
     }
@@ -123,11 +128,11 @@ function checkNeighbors(G, V) {
 
 /* G: Graph */
 function allColored(G) {
-	G.each(function(v) {
-		if(V.color == 0) {
-			return false
+	for(var i = 0; i < G.numVertices; i++) {
+		if(G.vertices[i].color == 0) {
+			return false;
 		}
-	});
+	}
 
 	return true;
 }
@@ -139,14 +144,7 @@ function updateColor(G, v, c) {
 	V.color = c;
 	if(checkNeighbors(G, V)) {
 		/* New Coloring is Valid */
-		if(allColored(G)) {
-			if(verifyColoring(G)) {
-				/* User beat level */
-
-			}
-
-			return true;
-		}
+		return true;
 	}
 	else {
 		/* Alert user error */

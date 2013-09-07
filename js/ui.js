@@ -1,5 +1,5 @@
 function Game() {
-	this.graph = generateGraph(15);
+	this.graph = generateGraph(4);
 	this.activeColor = 0;
 	console.log(this.graph.toString());
 }
@@ -47,8 +47,10 @@ function renderFirstGraph(G) {
 		for(var j = 0; j < numNeighbors; j++) {
 			var p2 = G.vertices[currVertex.neighbors[j]].loc;
 			if(p2) {
+				ctx.beginPath();
 				ctx.moveTo(p1.x, p1.y);
 				ctx.lineTo(p2.x, p2.y);
+				ctx.closePath();
 				ctx.stroke();
 			}
 			else {
@@ -57,7 +59,7 @@ function renderFirstGraph(G) {
 		}
 	}
 
-	updateColors(G);
+	updateColorDisplay(G);
 	colorControls();
 }
 
@@ -79,13 +81,12 @@ function colorControls() {
 }
 
 /* G: Graph */
-function updateColors(G) {
+function updateColorDisplay(G) {
 
 	for(var i = 0; i < G.numVertices; i++) {
 		var V = G.vertices[i];
 
 		if(V) {
-			console.log(V.color);
 			ctx.fillStyle = colors[V.color];
 
 			var cx = V.loc.x;
@@ -145,12 +146,25 @@ function onMouseDown(event) {
     	var V = game.graph.vertices[i];
 
     	if(inCircle(x, y, V.loc.x, V.loc.y, radius)) {
-    		console.log(V.toString());
-    		V.color = game.activeColor;
+    		
+    		/* valid color placement */
+    		if(updateColor(game.graph, i, game.activeColor)) {
+    			updateColorDisplay(game.graph);
 
-    		console.log('new color: ' + game.graph.vertices[i].color);
-    		updateColors(game.graph);
-    		break;
+	    		if(allColored(game.graph)) {
+	    			console.log('all colored');
+
+	    			if(verifyColoring(game.graph)) {
+	    				winGame();
+	    			}
+	    		}
+
+	    		break;
+    		}
+    		/* invalid */
+    		else {
+    			alert('bad color placement');
+    		}
     	}
     }
 }
@@ -162,3 +176,15 @@ function inCircle(x1, y1, x2, y2, r) {
     return (square_dist <= Math.pow(r, 2));
 }
  
+function winGame() {
+	ctx.clearRect(0,0,700,700);
+	ctx.font = "60px Arial";
+	ctx.textAlign = "center";
+	ctx.fillText("You Win!", 350, 200);
+	ctx.fillText("Get ready for the next board", 350, 400);
+
+	setTimeout(function() {
+		game = new Game();
+		renderFirstGraph(game.graph);
+	}, 3000);
+}
