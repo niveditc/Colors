@@ -231,6 +231,14 @@ function onKeyDown(event) {
     		game.paused = true;
     	}
     }
+
+    else if (event.keyCode > 48 && event.keyCode < 58) /* Number Keys */ {
+    	game.time = 45000;
+    	game.level = event.keyCode - 48;
+    	game.graph = generateGraph(game.level + 4);
+		renderFirstGraph(game.graph);
+    	console.log(game.graph.toString());
+    }
 }
 window.addEventListener('keydown', onKeyDown, false);
 
