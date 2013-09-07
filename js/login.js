@@ -11,6 +11,8 @@ function loginSuccess(user) {
     colorsUser.profPic = "https://graph.facebook.com/" + user.id + "/picture";
     localStorage.COLORSUser = JSON.stringify(colorsUser);
 
+    console.log(colorsUser.name);
+
     window.location = "colors.html";
         // Make this fancier, eventually.
 }

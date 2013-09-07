@@ -25,8 +25,6 @@ $(document).ready(function($) {
 	renderFirstGraph(game.graph);
 });
 
-// renderLevel();
-
 var timeInt = setInterval(function() {updateTime();}, 1000);
 
 function circle(ctx, cx, cy, radius) {
@@ -242,13 +240,6 @@ function inCircle(x1, y1, x2, y2, r) {
     return (square_dist <= Math.pow(r, 2));
 }
 
-// function renderLevel() {
-// 	ctx.clearRect(600, 0, 100, 40);
-// 	ctx.font = "20px Arial";
-// 	ctx.textAlign = "right";
-// 	ctx.fillText("Level " + game.level, 690, 30);
-// }
-
 function updateTime() {
 	game.time -= 1000;
 	if(game.time < 6000) {
@@ -261,13 +252,6 @@ function updateTime() {
 }
  
 function winGame() {
-	// ctx.fillRect(0,0,700,700);
-	// ctx.fillStyle = "white";
-	// ctx.font = "60px Arial";
-	// ctx.textAlign = "center";
-	// ctx.fillText("You Did It!", 350, 200);
-	// ctx.font = "40px Arial";
-	// ctx.fillText("Get ready for the next board", 350, 400);
 
 	setTimeout(function() {
 		game.level ++;
