@@ -52,7 +52,7 @@ Graph.prototype.toString = function() {
 /***** Functions *****/
 
 function areNeighbors(v1, v2) {
-    for (var i = 0; i < v1.neighbors.length; i++) {
+    for (var i = 0;     i < v1.neighbors.length; i++) {
         if (v1.neighbors[i] === v2.index) {
             /* Assuming vertex equality if have index equality */
             return true;
@@ -60,17 +60,6 @@ function areNeighbors(v1, v2) {
     }
 
     return false;
-}
-
-function shouldJoinWithEdge(v1, v2) {
-    if (v1.isEqual(v2) === true) {
-        return false;
-    }
-    if (areNeighbors(v1, v2) === true) {
-        return false;
-    }
-
-    return true;
 }
 
 /* Add v2's index to v1's neighbors, & vice versa */
@@ -107,7 +96,7 @@ function generateGraph(numVertices) {
         var v1 = vs[0];
         var v2 = vs[1];
 
-        if (shouldJoinWithEdge(v1, v2)) {
+        if (areNeighbors(v1, v2) === false) {
             joinWithEdge(v1, v2);
             edgeCount++;
         }

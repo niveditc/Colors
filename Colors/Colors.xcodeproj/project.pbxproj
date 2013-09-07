@@ -14,22 +14,9 @@
 		6A046CE317DAEDC70094AC98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046CE217DAEDC70094AC98 /* main.m */; };
 		6A046CE717DAEDC70094AC98 /* COLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */; };
 		6A046CE917DAEDC70094AC98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A046CE817DAEDC70094AC98 /* Images.xcassets */; };
-		6A046CF017DAEDC70094AC98 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A046CEF17DAEDC70094AC98 /* XCTest.framework */; };
-		6A046CF117DAEDC70094AC98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A046CD617DAEDC70094AC98 /* Foundation.framework */; };
-		6A046CF217DAEDC70094AC98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A046CDA17DAEDC70094AC98 /* UIKit.framework */; };
-		6A046CFA17DAEDC70094AC98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A046CF817DAEDC70094AC98 /* InfoPlist.strings */; };
-		6A046CFC17DAEDC70094AC98 /* ColorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046CFB17DAEDC70094AC98 /* ColorsTests.m */; };
+		6A046D0917DAEF9E0094AC98 /* COLVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0817DAEF9E0094AC98 /* COLVertex.m */; };
+		6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0B17DAF1270094AC98 /* COLGraph.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6A046CF317DAEDC70094AC98 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6A046CCB17DAEDC70094AC98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6A046CD217DAEDC70094AC98;
-			remoteInfo = Colors;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6A046CD317DAEDC70094AC98 /* Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colors.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,11 +30,11 @@
 		6A046CE517DAEDC70094AC98 /* COLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COLAppDelegate.h; sourceTree = "<group>"; };
 		6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COLAppDelegate.m; sourceTree = "<group>"; };
 		6A046CE817DAEDC70094AC98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6A046CEE17DAEDC70094AC98 /* ColorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A046CEF17DAEDC70094AC98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6A046CF717DAEDC70094AC98 /* ColorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColorsTests-Info.plist"; sourceTree = "<group>"; };
-		6A046CF917DAEDC70094AC98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6A046CFB17DAEDC70094AC98 /* ColorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorsTests.m; sourceTree = "<group>"; };
+		6A046D0717DAEF9E0094AC98 /* COLVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLVertex.h; sourceTree = "<group>"; };
+		6A046D0817DAEF9E0094AC98 /* COLVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLVertex.m; sourceTree = "<group>"; };
+		6A046D0A17DAF1270094AC98 /* COLGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLGraph.h; sourceTree = "<group>"; };
+		6A046D0B17DAF1270094AC98 /* COLGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraph.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,24 +48,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A046CEB17DAEDC70094AC98 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A046CF017DAEDC70094AC98 /* XCTest.framework in Frameworks */,
-				6A046CF217DAEDC70094AC98 /* UIKit.framework in Frameworks */,
-				6A046CF117DAEDC70094AC98 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		6A046CCA17DAEDC70094AC98 = {
 			isa = PBXGroup;
 			children = (
+				6A046D0517DAEE500094AC98 /* Classes */,
 				6A046CDC17DAEDC70094AC98 /* Colors */,
-				6A046CF517DAEDC70094AC98 /* ColorsTests */,
 				6A046CD517DAEDC70094AC98 /* Frameworks */,
 				6A046CD417DAEDC70094AC98 /* Products */,
 			);
@@ -88,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				6A046CD317DAEDC70094AC98 /* Colors.app */,
-				6A046CEE17DAEDC70094AC98 /* ColorsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,8 +83,6 @@
 		6A046CDC17DAEDC70094AC98 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
-				6A046CE517DAEDC70094AC98 /* COLAppDelegate.h */,
-				6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */,
 				6A046CE817DAEDC70094AC98 /* Images.xcassets */,
 				6A046CDD17DAEDC70094AC98 /* Supporting Files */,
 			);
@@ -126,22 +100,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6A046CF517DAEDC70094AC98 /* ColorsTests */ = {
+		6A046D0517DAEE500094AC98 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6A046CFB17DAEDC70094AC98 /* ColorsTests.m */,
-				6A046CF617DAEDC70094AC98 /* Supporting Files */,
+				6A046CE517DAEDC70094AC98 /* COLAppDelegate.h */,
+				6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */,
+				6A046D0617DAEF890094AC98 /* Models */,
 			);
-			path = ColorsTests;
+			name = Classes;
+			path = Colors/Classes;
 			sourceTree = "<group>";
 		};
-		6A046CF617DAEDC70094AC98 /* Supporting Files */ = {
+		6A046D0617DAEF890094AC98 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6A046CF717DAEDC70094AC98 /* ColorsTests-Info.plist */,
-				6A046CF817DAEDC70094AC98 /* InfoPlist.strings */,
+				6A046D0717DAEF9E0094AC98 /* COLVertex.h */,
+				6A046D0817DAEF9E0094AC98 /* COLVertex.m */,
+				6A046D0A17DAF1270094AC98 /* COLGraph.h */,
+				6A046D0B17DAF1270094AC98 /* COLGraph.m */,
 			);
-			name = "Supporting Files";
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,24 +142,6 @@
 			productReference = 6A046CD317DAEDC70094AC98 /* Colors.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A046CED17DAEDC70094AC98 /* ColorsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6A046D0217DAEDC70094AC98 /* Build configuration list for PBXNativeTarget "ColorsTests" */;
-			buildPhases = (
-				6A046CEA17DAEDC70094AC98 /* Sources */,
-				6A046CEB17DAEDC70094AC98 /* Frameworks */,
-				6A046CEC17DAEDC70094AC98 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6A046CF417DAEDC70094AC98 /* PBXTargetDependency */,
-			);
-			name = ColorsTests;
-			productName = ColorsTests;
-			productReference = 6A046CEE17DAEDC70094AC98 /* ColorsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -191,11 +151,6 @@
 				CLASSPREFIX = COL;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = isaacl.net;
-				TargetAttributes = {
-					6A046CED17DAEDC70094AC98 = {
-						TestTargetID = 6A046CD217DAEDC70094AC98;
-					};
-				};
 			};
 			buildConfigurationList = 6A046CCE17DAEDC70094AC98 /* Build configuration list for PBXProject "Colors" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -210,7 +165,6 @@
 			projectRoot = "";
 			targets = (
 				6A046CD217DAEDC70094AC98 /* Colors */,
-				6A046CED17DAEDC70094AC98 /* ColorsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,14 +179,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A046CEC17DAEDC70094AC98 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A046CFA17DAEDC70094AC98 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -241,41 +187,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A046CE317DAEDC70094AC98 /* main.m in Sources */,
+				6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */,
+				6A046D0917DAEF9E0094AC98 /* COLVertex.m in Sources */,
 				6A046CE717DAEDC70094AC98 /* COLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A046CEA17DAEDC70094AC98 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A046CFC17DAEDC70094AC98 /* ColorsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6A046CF417DAEDC70094AC98 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6A046CD217DAEDC70094AC98 /* Colors */;
-			targetProxy = 6A046CF317DAEDC70094AC98 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6A046CDF17DAEDC70094AC98 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6A046CE017DAEDC70094AC98 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6A046CF817DAEDC70094AC98 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A046CF917DAEDC70094AC98 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -379,46 +303,6 @@
 			};
 			name = Release;
 		};
-		6A046D0317DAEDC70094AC98 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Colors.app/Colors";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Colors/Colors-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ColorsTests/ColorsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		6A046D0417DAEDC70094AC98 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Colors.app/Colors";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Colors/Colors-Prefix.pch";
-				INFOPLIST_FILE = "ColorsTests/ColorsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,14 +320,6 @@
 			buildConfigurations = (
 				6A046D0017DAEDC70094AC98 /* Debug */,
 				6A046D0117DAEDC70094AC98 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		6A046D0217DAEDC70094AC98 /* Build configuration list for PBXNativeTarget "ColorsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6A046D0317DAEDC70094AC98 /* Debug */,
-				6A046D0417DAEDC70094AC98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
