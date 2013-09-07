@@ -104,22 +104,31 @@ function setRandomLocs(G, i) {
 
 	//binary array of placed vertices
 	//default all 0s
-	var placeVertex = newArray(i);
+	var setVertex = newArray(i);
+
+	//queue of neighbors
+	var vertexQ = []
+	vertexQ.push(1);
 
 	//start at circle grid 4,4
 	var gridX = 4;
 	var gridY = 4;
 
-	//place first vertex in 4,4
-	placeVertex(G, 1, gridX, gridY);
+	while(vertexQ.length > 0) {
+		var currIndex = vertexQ.shift();
+		setVertex[currIndex] = 1;
 
-	//loop through neighbors
-	var V = G.vertices[1];
-	for(int j = 0; j < V.neighbors.length; j++) {
-		//place in adjacent circles and run again
+		//loop through neighbors
+		var V = G.vertices[currIndex];
+		for(int j = 0; j < V.neighbors.length; j++) {
+
+			//check if placed
+			var n = V.neighbors[j];
+			if(!setVertex[n]) {
+				vertexQ.push(V.neighbors[j]);
+			}
+		}
 	}
-
-	//repeat
 }
 
 /* place vertex of index i at grid location x,y */
