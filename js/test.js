@@ -45,18 +45,15 @@ G4.vertices[1].color = 2;
 G4.vertices[2].color = 3;
 G4.vertices[3].color = 2;
 
-var G2 = new Graph(4);
-G5.vertices[0].neighbors = [1, 3];
-G5.vertices[1].neighbors = [0, 2];
-G5.vertices[2].neighbors = [1, 3];
-G5.vertices[3].neighbors = [0, 2];
+var G5 = new Graph(4);
+G5.vertices[0].neighbors = [1, 2, 3];
+G5.vertices[1].neighbors = [0, 2, 3];
+G5.vertices[2].neighbors = [0, 1, 3];
+G5.vertices[3].neighbors = [0, 1, 2];
 G5.vertices[0].color = 1;
-G5.vertices[1].color = 1;
-G5.vertices[2].color = 2;
-G5.vertices[3].color = 2;
-
-
-
+G5.vertices[1].color = 2;
+G5.vertices[2].color = 3;
+G5.vertices[3].color = 4;
 
 
 

@@ -8,7 +8,7 @@ function Vertex(index){
 function Graph(numVertices) {
     this.numVertices = numVertices;
     this.vertices = new Array(numVertices);
-    for(var i = 0; i < num_vertices; i++){
+    for(var i = 0; i < numVertices; i++){
         this.vertices[i] = new Vertex(i);
     }
 }
@@ -16,15 +16,13 @@ function Graph(numVertices) {
 
 /* G: Graph, V: Vertex */
 function checkNeighbors(G, V) {
-
-	V.neighbors.each(function(i) {
-		var nVertex = G.vertices[i];
-		if(V.color == nVertex.color) {
-			return false;
-		}
-	});
-
-	return true;
+    for(var j = 0; j < V.neighbors.length; j++){
+        var nVertex = G.vertices[V.neighbors[j]];
+        if(V.color == nVertex.color) {
+            return false;
+        }
+    }
+    return true;
 }
 
 /* G: Graph */
@@ -63,7 +61,7 @@ function updateColor(G, v, c) {
 
 var verifyColoring = function(g){
     for(var j = 0; j < g.numVertices; j++){
-        if(!checkNeighbors(g, g.vertices[i])){
+        if(!checkNeighbors(g, g.vertices[j])){
             return false;
         }
     }
