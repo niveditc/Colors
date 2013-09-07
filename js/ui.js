@@ -4,7 +4,11 @@ function Game() {
 	this.level = 0;
 	this.time = 45000;
 	this.paused = false;
+	this.userName = localStorage.COLORSUserName;
+	this.userID = localStorage.COLORSUserID;
+
 	console.log(this.graph.toString());
+	console.log("Logged in as: " + this.userName + ", id: " + this.userID);
 }
 
 /* grey (default), red, blue, green, orange, purple */
