@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSArray *vertices;
 
 - (instancetype)initWithNumVertices:(NSInteger)numVertices;
+- (void)randomlyGenerate;
 
 @end

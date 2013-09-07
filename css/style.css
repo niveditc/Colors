@@ -27,7 +27,7 @@ body {
 
 #myCanvas {
 	position: absolute;
-	top: 20px;
+	top: 0;
 	left: 50%;
 	margin-left: -350px;
 }
