@@ -10,6 +10,8 @@ function circle(ctx, cx, cy, radius) {
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
 }
 
+renderFirstGraph(G2);
+
 /* G: Graph */
 function renderFirstGraph(G) {
 	ctx.clearRect(0, 0, 700, 700);
@@ -81,7 +83,7 @@ function setLocs(i) {
 	for(var j = 0; j < i; j++) {
 
 		var angle = j*deg;
-		var rad = Math.floor(Math.random()* 200) + 100;
+		var rad = Math.floor(Math.random()* 200) + 130;
 
 		/* use trig to find position from (350, 350) */
 		var changeX = rad * Math.cos(angle);
