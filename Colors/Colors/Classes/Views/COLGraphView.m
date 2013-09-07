@@ -55,10 +55,16 @@
 
     [self computeVertexLocations];
 
-    for (NSInteger i = 0; i < self.graph.vertices.count; i++) {
-        COLVertex *vertex = [self.graph.vertices objectAtIndex:i];
+    for (COLVertex *vertex in self.graph.vertices) {
         COLVertexView *vertexView = [[COLVertexView alloc] initWithVertex:vertex];
         [self addSubview:vertexView];
+    }
+
+    for (COLVertex *v1 in self.graph.vertices) {
+        for (NSNumber *nghIdx in v1.neighbors) {
+            COLVertex *v2 = [self.graph vertexAtIndex:[nghIdx integerValue]];
+            [v1 drawEdgeToVertex:v2];
+        }
     }
 }
 

@@ -30,8 +30,7 @@
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGPoint center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
-#warning HACK, arghhhh.
-    CGContextAddArc(ctx, center.x, center.y, VERTEX_RADIUS, M_2_PI, M_2_PI-0.00001, NO);
+    CGContextAddArc(ctx, center.x, center.y, VERTEX_RADIUS, 0, 2*M_PI, NO);
     CGContextDrawPath(ctx, kCGPathFill);
 }
 
