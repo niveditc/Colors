@@ -29,9 +29,26 @@
     </div>
   </div>
 
-	<canvas id="myCanvas" width="700" height="700">
+	<canvas id="myCanvas" width="700" height="730">
 		No canvas available!
 	</canvas>
+
+  <div id="nextLevelModal" class="modal">
+    <h1></h1>
+  </div>
+
+  <div id="invalidColorModal" class="modal">
+    <h2>You can't have two neighbors of the same color</h2>
+  </div>
+
+  <div id="pauseModal" class="modal">
+    <h1>Paused</h1>
+    <h2>Press 'P' or Click Screen to Continue</h2>
+  </div>
+
+  <div id="endGameModal" class="modal">
+    <h2>Game Over</h2>
+  </div>
 
 <script type="text/javascript" src="js/ui.js"></script>
 </body>
