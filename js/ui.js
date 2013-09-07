@@ -33,19 +33,13 @@ function circle(ctx, cx, cy, radius) {
     ctx.closePath();
 }
 
-function roundedRect(ctx, x, y, width, height, radius){
-    ctx.beginPath();
-    ctx.moveTo(x,y+radius);
-    ctx.lineTo(x,y+height-radius);
-    ctx.quadraticCurveTo(x,y+height,x+radius,y+height);
-    ctx.lineTo(x+width-radius,y+height);
-    ctx.quadraticCurveTo(x+width,y+height,x+width,y+height-radius);
-    ctx.lineTo(x+width,y+radius);
-    ctx.quadraticCurveTo(x+width,y,x+width-radius,y);
-    ctx.lineTo(x+radius,y);
-    ctx.quadraticCurveTo(x,y,x,y+radius);
-    ctx.closePath();
-    ctx.fill();
+function roundedRect(ctx, x, y, height, radius){
+	ctx.beginPath();
+	ctx.arc(x, y, radius, 0, Math.PI, true);
+	ctx.lineTo(x - radius, y + height - radius);
+	ctx.arc(x, y + height - radius, radius, Math.PI, 2*Math.PI, true);
+	ctx.closePath();
+	ctx.fill();
 }
 
 function displayUserDetails() {
@@ -95,7 +89,7 @@ function renderFirstGraph(G) {
 }
 
 function colorControls() {
-	ctx.clearRect(500, 650, 200, 50);
+	ctx.clearRect(420, 650, 300, 250);
 
 	for(var i = 1; i < colors.length; i++) {
 		ctx.fillStyle = colors[colors.length - i];
@@ -104,9 +98,7 @@ function colorControls() {
 
 		/* active color state */
 		if(game.activeColor == colors.length - i) {
-			// function roundedRect(ctx, x, y, width, height, radius)
-			roundedRect(ctx, 700 - 50*i - cRadius, 620, 2*cRadius, 100, cRadius);
-			//ctx.fillRect(700 - 50*i - cRadius, 700, 2*cRadius, 100);
+			roundedRect(ctx, 700 - 50*i, 700 - cRadius, 2*cRadius, cRadius);
 			console.log('active');
 		}
 
