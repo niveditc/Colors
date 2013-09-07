@@ -1,3 +1,10 @@
+function Game() {
+	this.graph = generateGraph(15);
+	this.activeColor = 0;
+	console.log(this.graph.toString());
+}
+
+var game = new Game();
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
@@ -13,7 +20,7 @@ function circle(ctx, cx, cy, radius) {
     ctx.closePath();
 }
 
-renderFirstGraph(G1);
+renderFirstGraph(game.graph);
 
 /* G: Graph */
 function renderFirstGraph(G) {
@@ -112,8 +119,7 @@ function onMouseDown(event) {
     var x = event.pageX - canvas.offsetLeft;  // do not use event.x, it's not cross-browser!!!
     var y = event.pageY - canvas.offsetTop;
     
-    /* Check if Toggle Color Controls */
-    if()
+    console.log("Clicked!");
 }
 canvas.addEventListener('mousedown', onMouseDown, false);
 
