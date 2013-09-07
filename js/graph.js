@@ -125,10 +125,10 @@ function generateGraph(numVertices, numEdges) {
     return graph;
 }
 
-var G1 = generateGraph(6, 10);
+var G1 = generateGraph(30, 50);
 console.log(G1.toString());
-var G2 = generateGraph(50, 100);
-console.log(G2.toString());
+// var G2 = generateGraph(50, 100);
+// console.log(G2.toString());
 
 /* G: Graph, V: Vertex */
 function checkNeighbors(G, V) {
