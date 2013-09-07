@@ -1,13 +1,13 @@
 function Game() {
 	this.graph = generateGraph(4);
 	this.activeColor = 0;
-	this.level = 0;
+	this.level = 1;
 	this.time = 45000;
 	this.paused = false;
-	this.user = JSON.parse(localStorage.COLORSUser);
+	//this.user = JSON.parse(localStorage.COLORSUser);
 
 	console.log(this.graph.toString());
-	console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
+	//console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
 }
 
 /* grey (default), red, blue, green, orange, purple */
@@ -21,7 +21,7 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
 $(document).ready(function($) {
-	displayUserDetails();
+	//displayUserDetails();
 	renderFirstGraph(game.graph);
 });
 
@@ -178,12 +178,21 @@ function onMouseDown(event) {
     		}
     		/* invalid */
     		else {
-    			alert('bad color placement');
+    			$('#invalidColorModal').fadeIn(60);
+    			setTimeout(function() {
+					$('#invalidColorModal').fadeOut(60);
+				}, 1000);
     		}
     	}
     }
 }
 canvas.addEventListener('mousedown', onMouseDown, false);
+
+$('#pauseModal').click(function() {
+	timeInt = window.setInterval(function() {updateTime();}, 1000);
+	game.paused = false;
+	$('#pauseModal').fadeOut(60);
+})
 
 /* KEYBOARD EVENTS */
 /* Z:1, X:2, C:3, V:4, B:5 */
@@ -225,10 +234,12 @@ function onKeyDown(event) {
     	if(game.paused) {
     		timeInt = window.setInterval(function() {updateTime();}, 1000);
     		game.paused = false;
+    		$('#pauseModal').fadeOut(60);
     	}
     	else {
     		window.clearInterval(timeInt);
     		game.paused = true;
+    		$('#pauseModal').fadeIn(60);
     	}
     }
 
@@ -260,16 +271,19 @@ function updateTime() {
 }
  
 function winGame() {
+	game.level ++;
+	game.time += 46000;
+	$('#nextLevelModal').find('h1').html('Level ' + game.level);
+	$('#nextLevelModal').fadeIn(60);
 
 	setTimeout(function() {
-		game.level ++;
-		game.time += 45000;
-		game.graph = generateGraph(4 + game.level);
+		$('#nextLevelModal').fadeOut(60);
+		game.graph = generateGraph(3 + game.level);
 		renderFirstGraph(game.graph);
-		//renderLevel();
-	}, 2000);
+	}, 1000);
 }
 
 function gameOver() {
-	alert('game over');
+	$('#endGameModal').find('h2').html('Game Over');
+	$('#endGameModal').fadeIn(60);
 }
