@@ -3,11 +3,12 @@ function Game() {
 	this.activeColor = 0;
 	this.level = 0;
 	this.time = 45000;
+	this.paused = false;
 	console.log(this.graph.toString());
 }
 
 /* grey (default), red, blue, green, orange, purple */
-var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
+var colors = ["#D0D0D0", "#FF6347", "#2ADCCB", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
 var cRadius = 13;
 var line = 1;
@@ -16,7 +17,9 @@ var game = new Game();
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 renderFirstGraph(game.graph);
-renderLevel();
+// renderLevel();
+
+var timeInt = setInterval(function() {updateTime();}, 1000);
 
 function circle(ctx, cx, cy, radius) {
 	ctx.beginPath();
@@ -204,6 +207,19 @@ function onKeyDown(event) {
 
 		colorControls();
     }
+
+    else if (event.keyCode === 80) /* P:pause */ {
+    	console.log("time: " + game.time);
+
+    	if(game.paused) {
+    		timeInt = window.setInterval(function() {updateTime();}, 1000);
+    		game.paused = false;
+    	}
+    	else {
+    		window.clearInterval(timeInt);
+    		game.paused = true;
+    	}
+    }
 }
 window.addEventListener('keydown', onKeyDown, false);
 
@@ -213,17 +229,27 @@ function inCircle(x1, y1, x2, y2, r) {
     return (square_dist <= Math.pow(r, 2));
 }
 
-function renderLevel() {
-	ctx.clearRect(600, 0, 100, 40);
-	ctx.font = "20px Arial";
-	ctx.textAlign = "right";
-	ctx.fillText("Level " + game.level, 690, 30);
-}
+// function renderLevel() {
+// 	ctx.clearRect(600, 0, 100, 40);
+// 	ctx.font = "20px Arial";
+// 	ctx.textAlign = "right";
+// 	ctx.fillText("Level " + game.level, 690, 30);
+// }
 
-//TODO: SET TIME INTERVAL TO COUNT DOWN IN SECONDS. 45 SECONDS / ROUND. WHEN HITS 0 GAME OVER
+function updateTime() {
+	game.time -= 1000;
+	if(game.time < 6000) {
+		console.log(game.time);
+	}
+	if(game.time <= 0) {
+		window.clearInterval(timeInt);
+		gameOver();
+	}
+}
  
 function winGame() {
-	ctx.clearRect(0,0,700,700);
+	ctx.fillRect(0,0,700,700);
+	ctx.fillStyle = "white";
 	ctx.font = "60px Arial";
 	ctx.textAlign = "center";
 	ctx.fillText("You Did It!", 350, 200);
@@ -235,10 +261,10 @@ function winGame() {
 		game.time += 45000;
 		game.graph = generateGraph(4 + game.level);
 		renderFirstGraph(game.graph);
-		renderLevel();
+		//renderLevel();
 	}, 2000);
 }
 
 function gameOver() {
-
+	alert('game over');
 }
