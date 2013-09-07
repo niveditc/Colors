@@ -1,12 +1,10 @@
 function Game() {
 	this.graph = generateGraph(4);
 	this.activeColor = 0;
+	this.level = 0;
+	this.time = 45000;
 	console.log(this.graph.toString());
 }
-
-var game = new Game();
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
 
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
@@ -14,13 +12,17 @@ var radius = 10;
 var cRadius = 13;
 var line = 1;
 
+var game = new Game();
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+renderFirstGraph(game.graph);
+renderLevel();
+
 function circle(ctx, cx, cy, radius) {
 	ctx.beginPath();
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
     ctx.closePath();
 }
-
-renderFirstGraph(game.graph);
 
 /* G: Graph */
 function renderFirstGraph(G) {
@@ -85,7 +87,6 @@ function updateColorDisplay(G) {
 
 	for(var i = 0; i < G.numVertices; i++) {
 		var V = G.vertices[i];
-
 		if(V) {
 			ctx.fillStyle = colors[V.color];
 
@@ -170,21 +171,74 @@ function onMouseDown(event) {
 }
 canvas.addEventListener('mousedown', onMouseDown, false);
 
+/* KEYBOARD EVENTS */
+/* Z:1, X:2, C:3, V:4, B:5 */
+function onKeyDown(event) {
+    if (event.keyCode === 90) /* Z:1 */ {
+        game.activeColor = 1;
+		console.log(game.activeColor);
+
+		colorControls();
+    }
+    else if (event.keyCode === 88) /* X:2 */ {
+        game.activeColor = 2;
+		console.log(game.activeColor);
+
+		colorControls();
+    }
+    else if (event.keyCode === 67) /* C:3 */ {
+        game.activeColor = 3;
+		console.log(game.activeColor);
+
+		colorControls();
+    }
+    else if (event.keyCode === 86) /* V:4 */ {
+        game.activeColor = 4;
+		console.log(game.activeColor);
+
+		colorControls();
+    }
+    else if (event.keyCode === 66) /* B:5 */ {
+        game.activeColor = 5;
+		console.log(game.activeColor);
+
+		colorControls();
+    }
+}
+window.addEventListener('keydown', onKeyDown, false);
+
 /* x1, y1 testing point, x2, y2 center circle, r radius */
 function inCircle(x1, y1, x2, y2, r) {
 	var square_dist = Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2);
     return (square_dist <= Math.pow(r, 2));
 }
+
+function renderLevel() {
+	ctx.clearRect(600, 0, 100, 40);
+	ctx.font = "20px Arial";
+	ctx.textAlign = "right";
+	ctx.fillText("Level " + game.level, 690, 30);
+}
+
+//TODO: SET TIME INTERVAL TO COUNT DOWN IN SECONDS. 45 SECONDS / ROUND. WHEN HITS 0 GAME OVER
  
 function winGame() {
 	ctx.clearRect(0,0,700,700);
 	ctx.font = "60px Arial";
 	ctx.textAlign = "center";
-	ctx.fillText("You Win!", 350, 200);
+	ctx.fillText("You Did It!", 350, 200);
+	ctx.font = "40px Arial";
 	ctx.fillText("Get ready for the next board", 350, 400);
 
 	setTimeout(function() {
-		game = new Game();
+		game.level ++;
+		game.time += 45000;
+		game.graph = generateGraph(4 + game.level);
 		renderFirstGraph(game.graph);
-	}, 3000);
+		renderLevel();
+	}, 2000);
+}
+
+function gameOver() {
+
 }

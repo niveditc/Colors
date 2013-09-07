@@ -110,8 +110,8 @@ function generateGraph(numVertices) {
     return graph;
 }
 
-var G1 = generateGraph(15);
-console.log(G1.toString());
+// var G1 = generateGraph(15);
+// console.log(G1.toString());
 // var G2 = generateGraph(50);
 // console.log(G2.toString());
 
