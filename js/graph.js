@@ -1,7 +1,13 @@
+function Point(x,y) {
+	this.x = x;
+	this.y = y;
+}
+
 function Vertex(index){
     this.index = index;
     this.neighbors = [];
     this.color = 0;
+    this.loc = new Point(0,0);
 }
 
 
