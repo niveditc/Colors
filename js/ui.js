@@ -1,13 +1,44 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-ctx.font = "60px Arial";
-ctx.textAlign = "center";
-ctx.fillText("Hello World!", 200, 200);
 
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
 var line = 3;
+var cellWidth = 28;
+
+function drawGrid() {
+	ctx.fillStyle = colors[1];
+
+	//BORDERS
+	// ctx.fillRect(0, 0, cellWidth, 700);
+	// ctx.fillRect(0, 0, 700, cellWidth);
+
+	// ctx.fillRect(0, 700 - cellWidth, 700, cellWidth);
+	// ctx.fillRect(700 - cellWidth, 0, cellWidth, 700);
+
+	//GRID
+	// ctx.fillStyle = colors[2];
+	// for(var i = cellWidth * 2; i < 700 - cellWidth; i+= cellWidth) {
+	// 	ctx.fillRect(i, cellWidth, 1, 700 - (2*cellWidth));
+	// 	ctx.fillRect(cellWidth, i, 700 - (2*cellWidth), 1)
+	// }
+
+	//CIRCLES
+	// for(var i = 0; i < 8; i++) {
+	// 	var x = (2 + 3*i)*cellWidth;
+
+	// 	for(var j = 0; j < 8; j++) {
+	// 		var y = (2 + 3*j)*cellWidth;
+
+	// 		ctx.fillStyle = colors[4];
+	// 		circle(ctx, x, y, cellWidth);
+	// 		ctx.fill();
+	// 	}
+	// }
+}
+
+drawGrid();
 
 function circle(ctx, cx, cy, radius) {
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
@@ -39,7 +70,7 @@ function renderFirstGraph(G) {
 			ctx.moveTo(p1.x, p1.y);
 			ctx.lineTo(p2.x, p2.y);
 			ctx.stroke();
-		});
+		}
 	}
 
 	updateColors(G);
@@ -64,4 +95,14 @@ function updateColors(G) {
 /* i: int (num vertices) // returns: array of points */
 function setRandomLocs(i) {
 
+	//start at circle grid 4,4
+	var gridX = 4;
+	var gridY = 4;
+
+	for(int j = 0; j < i; j++) {
+		//pick random pt on edge of circle
+		//add to array
+
+		//move to next location of grid
+	}
 }
