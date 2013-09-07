@@ -12,9 +12,15 @@ function Graph(numVertices) {
     }
 }
 
-/* V: Vertex */
-function checkNeighbors(V) {
-	V.neighbors.each(function() {
-
+/* G: Graph, V: Vertex */
+function checkNeighbors(G, V) {
+	
+	V.neighbors.each(function(i) {
+		var nVertex = G.vertices[i];
+		if(V.color == nVertex.color) {
+			return false;
+		}
 	});
+
+	return true;
 }
