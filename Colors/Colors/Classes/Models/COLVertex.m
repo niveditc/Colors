@@ -10,7 +10,7 @@
 
 @implementation COLVertex
 
-- (instancetype)initWithNumVertices:(NSInteger)numVertices
+- (instancetype)init
 {
     self = [super init];
     if (self) {

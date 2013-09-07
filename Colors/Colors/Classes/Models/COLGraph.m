@@ -18,6 +18,7 @@
         NSMutableArray *tmpVertices = [NSMutableArray array];
         for (int i = 0; i < numVertices; i++) {
             COLVertex *vertex = [[COLVertex alloc] init];
+            vertex.index = i;
             [tmpVertices addObject:vertex];
         }
         self.vertices = tmpVertices;
@@ -25,20 +26,23 @@
     return self;
 }
 
-- (void)randomlyGenerate
++ (instancetype)randomlyGenerateWithNumVertices:(NSInteger)numVertices
 {
-    NSInteger numEdges = self.numVertices;
+    COLGraph *graph = [[COLGraph alloc] initWithNumVertices:numVertices];
+    NSInteger numEdges = graph.numVertices;
     NSInteger edgeCount = 0;
 
     while (edgeCount < numEdges) {
         COLVertex *v1, *v2;
-        [self twoRandVerticesFirst:&v1 second:&v2];
+        [graph twoRandVerticesFirst:&v1 second:&v2];
 
         if (![v1 isNeighborOf:v2]) {
             [v1 joinWithEdge:v2]; // Same as [v2 joinWithEdge:v1];
             edgeCount++;
         }
     }
+
+    return graph;
 }
 
 - (BOOL)checkNeighborsOfVertex:(COLVertex *)vertex

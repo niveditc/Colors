@@ -13,7 +13,6 @@
 @property (assign, nonatomic, readonly) NSInteger numVertices;
 @property (strong, nonatomic) NSArray *vertices;
 
-- (instancetype)initWithNumVertices:(NSInteger)numVertices;
-- (void)randomlyGenerate;
++ (instancetype)randomlyGenerateWithNumVertices:(NSInteger)numVertices;
 
 @end

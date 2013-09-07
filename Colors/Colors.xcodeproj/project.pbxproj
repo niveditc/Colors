@@ -16,6 +16,8 @@
 		6A046CE917DAEDC70094AC98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A046CE817DAEDC70094AC98 /* Images.xcassets */; };
 		6A046D0917DAEF9E0094AC98 /* COLVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0817DAEF9E0094AC98 /* COLVertex.m */; };
 		6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0B17DAF1270094AC98 /* COLGraph.m */; };
+		6A4FE9E617DBACF800E00982 /* COLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E517DBACF800E00982 /* COLGraphView.m */; };
+		6A4FE9E917DBAEB200E00982 /* COLVertexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E817DBAEB200E00982 /* COLVertexView.m */; };
 		6A86F0DF17DBA08D003372B7 /* COLStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0DE17DBA08D003372B7 /* COLStartViewController.m */; };
 		6A86F0E317DBA498003372B7 /* COLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0E217DBA498003372B7 /* COLFont.m */; };
 		6A86F0E617DBA5BA003372B7 /* COLGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0E517DBA5BA003372B7 /* COLGameViewController.m */; };
@@ -38,6 +40,10 @@
 		6A046D0817DAEF9E0094AC98 /* COLVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLVertex.m; sourceTree = "<group>"; };
 		6A046D0A17DAF1270094AC98 /* COLGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLGraph.h; sourceTree = "<group>"; };
 		6A046D0B17DAF1270094AC98 /* COLGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraph.m; sourceTree = "<group>"; };
+		6A4FE9E417DBACF800E00982 /* COLGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLGraphView.h; sourceTree = "<group>"; };
+		6A4FE9E517DBACF800E00982 /* COLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraphView.m; sourceTree = "<group>"; };
+		6A4FE9E717DBAEB200E00982 /* COLVertexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLVertexView.h; sourceTree = "<group>"; };
+		6A4FE9E817DBAEB200E00982 /* COLVertexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLVertexView.m; sourceTree = "<group>"; };
 		6A86F0DD17DBA08D003372B7 /* COLStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLStartViewController.h; sourceTree = "<group>"; };
 		6A86F0DE17DBA08D003372B7 /* COLStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLStartViewController.m; sourceTree = "<group>"; };
 		6A86F0E117DBA498003372B7 /* COLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLFont.h; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				6A046CE517DAEDC70094AC98 /* COLAppDelegate.h */,
 				6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */,
 				6A046D0617DAEF890094AC98 /* Models */,
+				6A4FE9E317DBACE200E00982 /* Views */,
 				6A86F0DC17DBA080003372B7 /* Controllers */,
 				6A86F0E017DBA48D003372B7 /* Helpers */,
 			);
@@ -131,6 +138,17 @@
 				6A046D0B17DAF1270094AC98 /* COLGraph.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6A4FE9E317DBACE200E00982 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6A4FE9E417DBACF800E00982 /* COLGraphView.h */,
+				6A4FE9E517DBACF800E00982 /* COLGraphView.m */,
+				6A4FE9E717DBAEB200E00982 /* COLVertexView.h */,
+				6A4FE9E817DBAEB200E00982 /* COLVertexView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6A86F0DC17DBA080003372B7 /* Controllers */ = {
@@ -222,10 +240,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A4FE9E917DBAEB200E00982 /* COLVertexView.m in Sources */,
 				6A86F0DF17DBA08D003372B7 /* COLStartViewController.m in Sources */,
 				6A046CE317DAEDC70094AC98 /* main.m in Sources */,
 				6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */,
 				6A046D0917DAEF9E0094AC98 /* COLVertex.m in Sources */,
+				6A4FE9E617DBACF800E00982 /* COLGraphView.m in Sources */,
 				6A86F0E617DBA5BA003372B7 /* COLGameViewController.m in Sources */,
 				6A046CE717DAEDC70094AC98 /* COLAppDelegate.m in Sources */,
 				6A86F0E317DBA498003372B7 /* COLFont.m in Sources */,

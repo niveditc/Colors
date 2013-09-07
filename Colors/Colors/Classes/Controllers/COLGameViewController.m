@@ -7,9 +7,11 @@
 //
 
 #import "COLGameViewController.h"
-#import "COLGraph.h"
+#import "COLGraphView.h"
 
 @interface COLGameViewController ()
+
+@property (strong, nonatomic) COLGraphView *graphView;
 
 @end
 
@@ -28,21 +30,28 @@
 {
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
+    CGSize selfSize = view.frame.size;
 
+    _graphView = [[COLGraphView alloc] initWithFrame:CGRectMake(0, 0, selfSize.width, selfSize.width)];
+    _graphView.backgroundColor = [UIColor yellowColor];
+    [view addSubview:_graphView];
     
     self.view = view;
 }
 
-- (void)viewWillLayoutSubviews
-{
-    CGSize selfSize = self.view.frame.size;
-
-
-}
+//- (void)viewWillLayoutSubviews
+//{
+//    CGSize selfSize = self.view.frame.size;
+//
+//    
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    COLGraph *graph = [COLGraph randomlyGenerateWithNumVertices:15];
+    [_graphView renderGraph:graph];
 }
 
 @end
