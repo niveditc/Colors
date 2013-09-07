@@ -43,9 +43,19 @@ function updateColor(G, v, c) {
 	V.color = c;
 	if(checkNeighbors(G, V)) {
 		/* New Coloring is Valid */
+		if(allColored(G)) {
+			if(verifyColoring(G)) {
+				/* User beat level */
+
+			}
+
+			return true;
+		}
 	}
 	else {
 		/* Alert user error */
+
+		return false;
 	}
 }
 
