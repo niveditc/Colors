@@ -4,7 +4,7 @@ var ctx = canvas.getContext("2d");
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
-var line = 2;
+var line = 1;
 
 function circle(ctx, cx, cy, radius) {
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
@@ -28,7 +28,7 @@ function renderFirstGraph(G) {
 	//draw graph edges
 	for(var i = 0; i < G.numVertices; i++) {
 		ctx.lineWidth = line;
-		ctx.strokeStyle = "#919191";
+		ctx.strokeStyle = "#666666";
 
 		var currVertex = G.vertices[i];
 		var numNeighbors = currVertex.neighbors.length;
