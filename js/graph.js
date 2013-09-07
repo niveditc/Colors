@@ -4,12 +4,6 @@ function Vertex(index){
     this.color = 0;
 }
 
-//mainly for testing
-function Vertex(index, neighbors, color){
-    this.index = index;
-    this.neighbors = neighbors;
-    this.color = color;
-}
 
 function Graph(numVertices) {
     this.numVertices = numVertices;
@@ -17,12 +11,6 @@ function Graph(numVertices) {
     for(var i = 0; i < num_vertices; i++){
         this.vertices[i] = new Vertex(i);
     }
-}
-
-//mainly for testing
-function Graph(vertices){
-    this.numVertices = vertices.length;
-    this.vertices = vertices;
 }
 
 
