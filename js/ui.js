@@ -6,6 +6,8 @@ var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
 var line = 3;
 
+renderFirstGraph(G1);
+
 function circle(ctx, cx, cy, radius) {
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
 }
@@ -66,7 +68,7 @@ function setLocs(i) {
 	//divide circle into i segments
 	var deg = 2*Math.PI / i; 
 
-	for(int j = 0; j < i; j++) {
+	for(var j = 0; j < i; j++) {
 
 		var angle = j*deg;
 		var rad = Math.floor(Math.random()* 200) + 100;
@@ -78,5 +80,7 @@ function setLocs(i) {
 		/* Add new point to array with offset from center */
 		locArray[j] = new Point(350 + changeX, 350 + changeY);
 	}
+
+	return locArray;
 }
 
