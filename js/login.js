@@ -1,22 +1,18 @@
-function hasLocalStorage() {
-    if (localStorage) {
-        console.log("Has localStorage");
-        return true;
-    }
-    else {
-        console.log("Doesn't have localStorage");
-        return false;
-    }
+function User() {
+    this.name;
+    this.id;
+    this.profPic;
 }
 
 function loginSuccess(user) {
-    if (hasLocalStorage()) {
-        localStorage.COLORSUserName = user.name;
-        localStorage.COLORSUserID = user.id;
+    colorsUser = new User();
+    colorsUser.name = user.name;
+    colorsUser.id = user.id;
+    colorsUser.profPic = "https://graph.facebook.com/" + user.id + "/picture";
+    localStorage.COLORSUser = JSON.stringify(colorsUser);
 
-        window.location = "colors.html";
+    window.location = "colors.html";
         // Make this fancier, eventually.
-    }
 }
 
 function logout() {

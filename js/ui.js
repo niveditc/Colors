@@ -4,11 +4,10 @@ function Game() {
 	this.level = 0;
 	this.time = 45000;
 	this.paused = false;
-	this.userName = localStorage.COLORSUserName;
-	this.userID = localStorage.COLORSUserID;
+	this.user = JSON.parse(localStorage.COLORSUser);
 
 	console.log(this.graph.toString());
-	console.log("Logged in as: " + this.userName + ", id: " + this.userID);
+	console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
 }
 
 /* grey (default), red, blue, green, orange, purple */
@@ -20,7 +19,12 @@ var line = 1;
 var game = new Game();
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-renderFirstGraph(game.graph);
+
+$(document).ready(function($) {
+	displayUserDetails();
+	renderFirstGraph(game.graph);
+});
+
 // renderLevel();
 
 var timeInt = setInterval(function() {updateTime();}, 1000);
@@ -29,6 +33,11 @@ function circle(ctx, cx, cy, radius) {
 	ctx.beginPath();
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
     ctx.closePath();
+}
+
+function displayUserDetails() {
+	// $("#header #user #name").text(game.user.name);
+	$("#header #user img").attr("src", game.user.profPic);
 }
 
 /* G: Graph */
