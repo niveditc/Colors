@@ -7,14 +7,17 @@
 //
 
 #import "COLAppDelegate.h"
+#import "COLStartViewController.h"
 
 @implementation COLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    COLStartViewController *startViewController = [[COLStartViewController alloc] init];
+    self.window.rootViewController = startViewController;
     self.window.backgroundColor = [UIColor whiteColor];
+
     [self.window makeKeyAndVisible];
     return YES;
 }
