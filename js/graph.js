@@ -5,7 +5,7 @@ function Point(x,y) {
 	this.y = y;
 }
 
-function Vertex(index){
+function Vertex(index) {
     this.index = index;
     this.neighbors = [];
     this.color = 0;
@@ -29,7 +29,7 @@ Vertex.prototype.toString = function() {
 function Graph(numVertices) {
     this.numVertices = numVertices;
     this.vertices = new Array(numVertices);
-    for(var i = 0; i < numVertices; i++){
+    for (var i = 0; i < numVertices; i++) {
         this.vertices[i] = new Vertex(i);
     }
 }
@@ -103,11 +103,13 @@ function generateGraph(numVertices, numEdges) {
         }
     }
 
-    return graph
+    return graph;
 }
 
-var G = generateGraph(10, 15);
-console.log(G.toString());
+var G1 = generateGraph(10, 15);
+console.log(G1.toString());
+var G2 = generateGraph(10, 15);
+console.log(G2.toString());
 
 /* G: Graph, V: Vertex */
 function checkNeighbors(G, V) {
