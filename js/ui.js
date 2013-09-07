@@ -11,7 +11,7 @@ var ctx = canvas.getContext("2d");
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
-var cRadius = 14;
+var cRadius = 13;
 var line = 1;
 
 function circle(ctx, cx, cy, radius) {
@@ -62,17 +62,20 @@ function renderFirstGraph(G) {
 }
 
 function colorControls() {
+	ctx.clearRect(500, 650, 200, 50);
+
 	for(var i = 1; i < colors.length; i++) {
 		ctx.fillStyle = colors[colors.length - i];
 		circle(ctx, 700 - 34*i, 670, cRadius);
 		ctx.fill();
+
+		/* active color state */
+		if(game.activeColor == colors.length - i) {
+			ctx.fillRect(700 - 34*i - cRadius, 670, 2*cRadius, 100);
+			console.log('active');
+		}
+
 	}
-}
-
-
-function updateControls() {
-	ctx.clearRect(500, 650, 200, 50);
-	console.log('did');
 }
 
 /* G: Graph */
@@ -128,12 +131,28 @@ function onMouseDown(event) {
     /* Check if Toggle Color Controls */
     for(var i = 1; i < colors.length; i++) {
     	if(inCircle(x, y, 700 - 34*i, 670, cRadius)) {
-    		console.log(colors[i]);
-    		updateControls();
+			game.activeColor = colors.length - i;
+			console.log(game.activeColor);
+
+			colorControls();
+			break;
     	}
     }
 
-    console.log("Clicked!");
+    /* Check if Changing Point Color */
+    console.log(game.graph);
+    for(var i = 0; i < game.graph.numVertices; i++) {
+    	var V = game.graph.vertices[i];
+
+    	if(inCircle(x, y, V.loc.x, V.loc.y, radius)) {
+    		console.log(V.toString());
+    		V.color = game.activeColor;
+
+    		console.log('new color: ' + game.graph.vertices[i].color);
+    		updateColors(game.graph);
+    		break;
+    	}
+    }
 }
 canvas.addEventListener('mousedown', onMouseDown, false);
 
