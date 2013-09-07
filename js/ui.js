@@ -59,12 +59,24 @@ function updateColors(G) {
 }
 
 /* i: number of vertices, returns: array of points */
+/* min radius: 100, max radius: 300 */
 function setLocs(i) {
-	//min radius: 100, max radius: 300
+	var locArray = new Array();
 
+	//divide circle into i segments
+	var deg = 2*Math.PI / i; 
 
 	for(int j = 0; j < i; j++) {
 
+		var angle = j*deg;
+		var rad = Math.floor(Math.random()* 200) + 100;
+
+		/* use trig to find position from (350, 350) */
+		var changeX = rad * Math.cos(angle);
+		var changeY = rad * Math.sin(angle);
+
+		/* Add new point to array with offset from center */
+		locArray[j] = new Point(350 + changeX, 350 + changeY);
 	}
 }
 
