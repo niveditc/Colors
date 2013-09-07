@@ -22,10 +22,15 @@ function renderFirstGraph(G) {
 	//draw graph edges
 	for(var i = 0; i < G.numVertices; i++) {
 		var currVertex = G.vertices[i];
+		var numNeighbors = currVertex.neighbors.length;
+		var p1 = currVertex.loc;
 
-		currVertex.neighbors.each(function(nVertex) {
-			//draw line connecting locs
-
+		for(var i = 0; i < numNeighbors; i++) {
+			var p2 = currVertex.neighbors[i].loc;
+			
+			ctx.moveTo(p1.x, p1.y);
+			ctx.lineTo(p2.x, p2.y);
+			ctx.stroke();
 		});
 	}
 
@@ -38,7 +43,7 @@ function renderNewGraph(G) {
 	//take in vertex locations and colors
 }
 
-/* i: int (num vertices) // returns: array of (x,y) locations */
+/* i: int (num vertices) // returns: array of points */
 function setRandomLocs(i) {
 
 }
