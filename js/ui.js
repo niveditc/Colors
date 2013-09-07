@@ -10,7 +10,7 @@ function circle(ctx, cx, cy, radius) {
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
 }
 
-renderFirstGraph(G2);
+renderFirstGraph(G1);
 
 /* G: Graph */
 function renderFirstGraph(G) {
