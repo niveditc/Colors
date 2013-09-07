@@ -65,13 +65,35 @@ function updateColor(G, v, c) {
 	}
 }
 
-var verifyColoring = function(g){
-    for(var j = 0; j < g.numVertices; j++){
-        if(!checkNeighbors(g, g.vertices[j])){
+function verifyColoring(G){
+    for(var j = 0; j < G.numVertices; j++){
+        if(!checkNeighbors(G, G.vertices[j])){
             return false;
         }
     }
     return true;
 }
+
+function isConnected(G){
+  outer: for(var i = 1; i < G.numVertices; i++){
+        //BFS
+        var queue = [i];
+        var visited = G.vertices.map(function(i){ return false;});
+        while(queue.length > 0){
+            var current = queue.shift();
+            if(current == 0) continue outer;
+            visited[current] = true;
+            var addToQ = G.vertices[current].neighbors.filter(function(i){
+                    return !visited[i];
+                });
+            queue = queue.concat(addToQ);
+
+        }
+        //vertex i is not connected to vertex 0 (not reached)
+        return false;
+    }
+    return true;
+}
+
 
 

@@ -56,9 +56,41 @@ G5.vertices[2].color = 3;
 G5.vertices[3].color = 4;
 
 
+//DISJOINT GRAPHS FOLLOW - THESE ARE NOT VALID!!
+var DG1 = new Graph(4);
+DG1.vertices[0].neighbors = [];
+DG1.vertices[1].neighbors = [];
+DG1.vertices[2].neighbors = [];
+DG1.vertices[3].neighbors = [];
+
+var DG2 = new Graph(4);
+DG2.vertices[0].neighbors = [1];
+DG2.vertices[1].neighbors = [0];
+DG2.vertices[2].neighbors = [];
+DG2.vertices[3].neighbors = [];
+
+var DG3 = new Graph(4);
+DG3.vertices[0].neighbors = [1, 3];
+DG3.vertices[1].neighbors = [0];
+DG3.vertices[2].neighbors = [];
+DG3.vertices[3].neighbors = [0];
+
+var DG4 = new Graph(4);
+DG4.vertices[0].neighbors = [1, 3];
+DG4.vertices[1].neighbors = [0, 3];
+DG4.vertices[2].neighbors = [0, 1];
+DG4.vertices[3].neighbors = [];
+
+var DG5 = new Graph(4);
+DG5.vertices[0].neighbors = [1];
+DG5.vertices[1].neighbors = [0];
+DG5.vertices[2].neighbors = [3];
+DG5.vertices[3].neighbors = [2];
+
+
 
 console.log("TEST 1");
-if(verifyColoring(G1)){
+if(verifyColoring(G1) && isConnected(G1)){
     console.log("PASSED");
 } else{
     console.log("FAILED");
@@ -66,7 +98,7 @@ if(verifyColoring(G1)){
 
 
 console.log("TEST 2");
-if(!verifyColoring(G2)){
+if(!verifyColoring(G2) && isConnected(G2)){
     console.log("PASSED");
 } else{
     console.log("FAILED");
@@ -74,7 +106,7 @@ if(!verifyColoring(G2)){
 
 
 console.log("TEST 3");
-if(!verifyColoring(G3)){
+if(!verifyColoring(G3) && isConnected(G3)){
     console.log("PASSED");
 } else{
     console.log("FAILED");
@@ -82,7 +114,7 @@ if(!verifyColoring(G3)){
 
 
 console.log("TEST 4");
-if(verifyColoring(G4)){
+if(verifyColoring(G4) && isConnected(G4)){
     console.log("PASSED");
 } else{
     console.log("FAILED");
@@ -90,8 +122,45 @@ if(verifyColoring(G4)){
 
 
 console.log("TEST 5");
-if(verifyColoring(G5)){
+if(verifyColoring(G5) && isConnected(G5)){
     console.log("PASSED");
 } else{
     console.log("FAILED");
 }
+
+console.log("TEST 6");
+if(!isConnected(DG1)){
+    console.log("PASSED");
+} else{
+    console.log("FAILED");
+}
+
+
+console.log("TEST 7");
+if(!isConnected(DG2)){
+    console.log("PASSED");
+} else{
+    console.log("FAILED");
+}
+
+console.log("TEST 8");
+if(!isConnected(DG3)){
+    console.log("PASSED");
+} else{
+    console.log("FAILED");
+}
+
+console.log("TEST 9");
+if(!isConnected(DG4)){
+    console.log("PASSED");
+} else{
+    console.log("FAILED");
+}
+
+console.log("TEST 10");
+if(!isConnected(DG5)){
+    console.log("PASSED");
+} else{
+    console.log("FAILED");
+}
+//console.log('lol');
