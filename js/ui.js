@@ -4,10 +4,10 @@ function Game() {
 	this.level = 1;
 	this.time = 45000;
 	this.paused = false;
-	//this.user = JSON.parse(localStorage.COLORSUser);
+	this.user = JSON.parse(localStorage.COLORSUser);
 
 	console.log(this.graph.toString());
-	//console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
+	console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
 }
 
 /* grey (default), red, blue, green, orange, purple */
@@ -21,7 +21,7 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
 $(document).ready(function($) {
-	//displayUserDetails();
+	displayUserDetails();
 	renderFirstGraph(game.graph);
 });
 
