@@ -19,10 +19,15 @@ function renderFirstGraph(G) {
 	//generate array of "random" locations
 	var locs = setLocs(G.numVertices);
 
+	console.log('here');
+
 	//set vertices at locations
 	for(var i = 0; i < G.numVertices; i++) {
-		G.vertices[i].loc = locs[i];
+		G.vertices[i].loc.x = locs[i].x;
+		G.vertices[i].loc.y = locs[i].y;
 	}
+
+	console.log('there');
 
 	//draw graph edges
 	for(var i = 0; i < G.numVertices; i++) {
@@ -40,6 +45,8 @@ function renderFirstGraph(G) {
 			ctx.stroke();
 		}
 	}
+
+	console.log('everywhere');
 
 	updateColors(G);
 }
