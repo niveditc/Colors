@@ -4,9 +4,9 @@ var ctx = canvas.getContext("2d");
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#D0D0D0", "#FF6347", "#40E0D0", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 10;
-var line = 3;
+var line = 2;
 
-renderFirstGraph(G1);
+renderFirstGraph(G3);
 
 function circle(ctx, cx, cy, radius) {
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
@@ -19,34 +19,33 @@ function renderFirstGraph(G) {
 	//generate array of "random" locations
 	var locs = setLocs(G.numVertices);
 
-	console.log('here');
-
 	//set vertices at locations
 	for(var i = 0; i < G.numVertices; i++) {
 		G.vertices[i].loc.x = locs[i].x;
 		G.vertices[i].loc.y = locs[i].y;
 	}
 
-	console.log('there');
-
 	//draw graph edges
 	for(var i = 0; i < G.numVertices; i++) {
 		ctx.lineWidth = line;
+		ctx.strokeStyle = "#919191";
 
 		var currVertex = G.vertices[i];
 		var numNeighbors = currVertex.neighbors.length;
 		var p1 = currVertex.loc;
 
-		for(var i = 0; i < numNeighbors; i++) {
-			var p2 = currVertex.neighbors[i].loc;
-			
-			ctx.moveTo(p1.x, p1.y);
-			ctx.lineTo(p2.x, p2.y);
-			ctx.stroke();
+		for(var j = 0; j < numNeighbors; j++) {
+			var p2 = G.vertices[currVertex.neighbors[j]].loc;
+			if(p2) {
+				ctx.moveTo(p1.x, p1.y);
+				ctx.lineTo(p2.x, p2.y);
+				ctx.stroke();
+			}
+			else {
+				console.log('empty neighbor');
+			}
 		}
 	}
-
-	console.log('everywhere');
 
 	updateColors(G);
 }
@@ -55,15 +54,21 @@ function renderFirstGraph(G) {
 function updateColors(G) {
 
 	for(var i = 0; i < G.numVertices; i++) {
-		var V = G.numVertices[i];
+		var V = G.vertices[i];
 
-		ctx.fillStyle = V.color;
+		if(V) {
+			console.log(V.color);
+			ctx.fillStyle = colors[V.color];
 
-		ctx.beginPath();
-		var cx = V.loc.x;
-		var cy = V.loc.y;
-		circle(ctx, cx, cy, radius);
-		ctx.fill();
+			ctx.beginPath();
+			var cx = V.loc.x;
+			var cy = V.loc.y;
+			circle(ctx, cx, cy, radius);
+			ctx.fill();
+		}
+		else {
+			console.log('invalid vertex');
+		}
 	}
 }
 
