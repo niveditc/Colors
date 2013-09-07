@@ -25,6 +25,29 @@ function checkNeighbors(G, V) {
 	return true;
 }
 
+/* G: Graph */
+function allColored(G) {
+	G.each(function(v) {
+		if(V.color == 0) {
+			return false
+		}
+	});
+
+	return true;
+} 
+
+/* G: Graph, v: vertex index, c: color index */
+function updateColor(G, v, c) {
+	var V = G.vertices[v];
+
+	V.color = c;
+	if(checkNeighbors(G, V)) {
+		/* New Coloring is Valid */
+	}
+	else {
+		/* Alert user error */
+	}
+}
 
 var verifyColoring = function(g){
     for(var j = 0; j < g.numVertices; j++){
