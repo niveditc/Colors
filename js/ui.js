@@ -1,6 +1,6 @@
 function Game() {
 	this.graph = generateGraph(4);
-	this.activeColor = 0;
+	this.activeColor = 1;
 	this.level = 1;
 	this.time = 45000;
 	this.paused = false;
@@ -13,7 +13,7 @@ function Game() {
 /* grey (default), red, blue, green, orange, purple */
 var colors = ["#666666", "#FF6347", "#2ADCCB", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 30;
-var cRadius = 10;
+var cRadius = 20;
 var line = 10;
 
 var game = new Game();
@@ -31,6 +31,21 @@ function circle(ctx, cx, cy, radius) {
 	ctx.beginPath();
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
     ctx.closePath();
+}
+
+function roundedRect(ctx, x, y, width, height, radius){
+    ctx.beginPath();
+    ctx.moveTo(x,y+radius);
+    ctx.lineTo(x,y+height-radius);
+    ctx.quadraticCurveTo(x,y+height,x+radius,y+height);
+    ctx.lineTo(x+width-radius,y+height);
+    ctx.quadraticCurveTo(x+width,y+height,x+width,y+height-radius);
+    ctx.lineTo(x+width,y+radius);
+    ctx.quadraticCurveTo(x+width,y,x+width-radius,y);
+    ctx.lineTo(x+radius,y);
+    ctx.quadraticCurveTo(x,y,x,y+radius);
+    ctx.closePath();
+    ctx.fill();
 }
 
 function displayUserDetails() {
@@ -84,12 +99,14 @@ function colorControls() {
 
 	for(var i = 1; i < colors.length; i++) {
 		ctx.fillStyle = colors[colors.length - i];
-		circle(ctx, 700 - 34*i, 670, cRadius);
+		circle(ctx, 700 - 50*i, 700, cRadius);
 		ctx.fill();
 
 		/* active color state */
 		if(game.activeColor == colors.length - i) {
-			ctx.fillRect(700 - 34*i - cRadius, 670, 2*cRadius, 100);
+			// function roundedRect(ctx, x, y, width, height, radius)
+			roundedRect(ctx, 700 - 50*i - cRadius, 620, 2*cRadius, 100, cRadius);
+			//ctx.fillRect(700 - 50*i - cRadius, 700, 2*cRadius, 100);
 			console.log('active');
 		}
 
@@ -284,6 +301,5 @@ function winGame() {
 }
 
 function gameOver() {
-	$('#endGameModal').find('h2').html('Game Over');
 	$('#endGameModal').fadeIn(60);
 }
