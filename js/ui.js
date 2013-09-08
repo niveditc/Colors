@@ -8,7 +8,7 @@ function Game() {
 	this.user = JSON.parse(localStorage.COLORSUser);
 
 	console.log(this.graph.toString());
-	console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
+	//console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
 }
 
 /* grey (default), red, blue, green, orange, purple */
@@ -50,7 +50,7 @@ function roundedRect(ctx, x, y, height, radius){
 
 function displayUserDetails() {
 	// $("#header #user #name").text(game.user.name);
-	$("#header #user img").attr("src", game.user.profPic);
+	//$("#header #user img").attr("src", game.user.profPic);
 }
 
 /* G: Graph */
