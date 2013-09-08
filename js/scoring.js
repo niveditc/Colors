@@ -13,6 +13,7 @@ function determineColorsUsed(graph){
                 return count;
             }
         }, 0);
+    console.log("Bonus " + (5 - numUsed));;
     return numUsed;
 }
 
