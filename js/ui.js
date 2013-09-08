@@ -36,6 +36,7 @@ $('#playAgain').click(function() {
 		game = new Game();
 		renderFirstGraph(game.graph);
 		timeInt = setInterval(function() {updateTime();}, 1000);
+		$('#scoreTracker').html('Score: ' + game.score);
 	}, 100);
 })
 
@@ -312,12 +313,12 @@ function winGame() {
 	$('#nextLevelModal').find('h2').html('You scored ' + game.score + ' points');
 	$('#nextLevelModal').fadeIn(60);
 
-	// setTimeout(function() {
-	// 	$('#scoreTracker').html('Score: ' + game.score);
-	// 	$('#nextLevelModal').fadeOut(60);
-	// 	game.graph = generateGraph(3 + game.level);
-	// 	renderFirstGraph(game.graph);
-	// }, 1000);
+	setTimeout(function() {
+		$('#scoreTracker').html('Score: ' + game.score);
+		$('#nextLevelModal').fadeOut(60);
+		game.graph = generateGraph(3 + game.level);
+		renderFirstGraph(game.graph);
+	}, 1000);
 }
 
 function gameOver() {
