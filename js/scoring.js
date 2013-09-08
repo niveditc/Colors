@@ -26,6 +26,6 @@ function getBonus(graph){
 // Level number * 10 for clearing the level
 function calculateScore(level, graph){
     var score = level*10;
-    score += 10*(level/10 + 1)*getBonus(graph);
+    score += (10*getBonus(graph));
     return score;
 }
