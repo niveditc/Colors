@@ -38,9 +38,8 @@
 
     for (NSInteger j = 0; j < numVertices; j++) {
         double angle = j * deg;
-        double rad = (arc4random() % 120) + 40;
+        double rad = (arc4random() % (120-(int)(2*VERTEX_RADIUS))) + 40;
 
-        /* use trig to find position from (350, 350) */
 		double changeX = rad * cos(angle);
 		double changeY = rad * sin(angle);
 
@@ -56,11 +55,6 @@
 
     [self computeVertexLocations];
 
-    for (COLVertex *vertex in self.graph.vertices) {
-        COLVertexView *vertexView = [[COLVertexView alloc] initWithVertex:vertex];
-        [self addSubview:vertexView];
-    }
-
     for (COLVertex *v1 in self.graph.vertices) {
         for (NSNumber *nghIdx in v1.neighbors) {
             if ([nghIdx integerValue] > v1.index) {
@@ -70,6 +64,13 @@
             }
         }
     }
+
+    for (COLVertex *vertex in self.graph.vertices) {
+        COLVertexView *vertexView = [[COLVertexView alloc] initWithVertex:vertex];
+        [self addSubview:vertexView];
+    }
+
+
 }
 
 #pragma mark - Helpers

@@ -89,8 +89,9 @@
         [_container removeFromSuperview];
 
         COLGameViewController *gameViewController = [[COLGameViewController alloc] init];
-        gameViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:gameViewController animated:YES completion:nil];
+        UINavigationController *gameNavController = [[UINavigationController alloc] initWithRootViewController:gameViewController];
+        gameNavController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:gameNavController animated:YES completion:nil];
     }];
 }
 

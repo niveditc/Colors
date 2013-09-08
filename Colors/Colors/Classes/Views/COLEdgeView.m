@@ -32,6 +32,7 @@
         CGContextMoveToPoint(context, 0, CGRectGetHeight(self.frame));
         CGContextAddLineToPoint(context, CGRectGetWidth(self.frame), 0);
     }
+    CGContextSetLineWidth(context, 4.0f);
     CGContextStrokePath(context);
 }
 

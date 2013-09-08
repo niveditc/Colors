@@ -136,7 +136,6 @@
 - (NSString *)description
 {
     NSString *str = [NSString stringWithFormat:@"No. of vertices: %d", self.numVertices];
-#warning Does this actually print vertices?
     str = [str stringByAppendingFormat:@"Vertices: %@", self.vertices];
     return str;
 }

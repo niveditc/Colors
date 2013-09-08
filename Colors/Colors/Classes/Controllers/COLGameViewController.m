@@ -8,6 +8,7 @@
 
 #import "COLGameViewController.h"
 #import "COLGraphView.h"
+#import "COLColorControls.h"
 
 @interface COLGameViewController ()
 
@@ -26,18 +27,6 @@
     return self;
 }
 
-- (void)loadView
-{
-    UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-    CGSize selfSize = view.frame.size;
-
-    _graphView = [[COLGraphView alloc] initWithFrame:CGRectMake(0, 0, selfSize.width, selfSize.width)];
-    [view addSubview:_graphView];
-    
-    self.view = view;
-}
-
 //- (void)viewWillLayoutSubviews
 //{
 //    CGSize selfSize = self.view.frame.size;
@@ -48,6 +37,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.navigationItem.title = @"Colors";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New game"
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self
+                                                                            action:@selector(newGame:)];
+
+
+    [self newGame:nil];
+}
+
+- (IBAction)newGame:(id)sender
+{
+    if (_graphView) {
+        [_graphView removeFromSuperview];
+    }
+    
+    CGSize selfSize = self.view.frame.size;
+    _graphView = [[COLGraphView alloc] initWithFrame:CGRectMake(0,
+                                                                (selfSize.height-selfSize.width)/2,
+                                                                selfSize.width,
+                                                                selfSize.width)];
+    [self.view addSubview:_graphView];
 
     COLGraph *graph = [COLGraph randomlyGenerateWithNumVertices:5];
     [_graphView renderGraph:graph];
