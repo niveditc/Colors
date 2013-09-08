@@ -13,6 +13,7 @@
 @interface COLGameViewController ()
 
 @property (strong, nonatomic) COLGraphView *graphView;
+@property (strong, nonatomic) COLColorControls *colorControl;
 
 @end
 
@@ -22,17 +23,15 @@
 {
     self = [super init];
     if (self) {
-        // Custom initialization
+        CGFloat colorControlHeight = 70;
+        _colorControl = [[COLColorControls alloc] initWithFrame:CGRectMake(5,
+                                                                           self.view.frame.size.height-colorControlHeight,
+                                                                           self.view.frame.size.width,
+                                                                           colorControlHeight)];
+        [self.view addSubview:_colorControl];
     }
     return self;
 }
-
-//- (void)viewWillLayoutSubviews
-//{
-//    CGSize selfSize = self.view.frame.size;
-//
-//    
-//}
 
 - (void)viewDidLoad
 {

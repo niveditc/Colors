@@ -9,44 +9,51 @@
 #import "COLColorControls.h"
 #import "ILSideScrollView.h"
 
+@interface COLColorControls ()
+
+@property (strong, nonatomic) ILSideScrollView *scroller;
+
+@end
+
 @implementation COLColorControls
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _scroller = [[ILSideScrollView alloc] initWithFrame:self.bounds];
+        [self addSubview:_scroller];
+
         [self setupScroller];
     }
     return self;
 }
 
-- (void)setupScroller {
+- (void)setupScroller
+{
     NSMutableArray *items = [NSMutableArray array];
 
     ILSideScrollViewItem *item1 = [ILSideScrollViewItem item];
-    item1.defaultTitleColor = [UIColor redColor];
+    item1.backgroundColor = [UIColor colorWithHexString:@"#FF6347"];
     [items addObject:item1];
 
     ILSideScrollViewItem *item2 = [ILSideScrollViewItem item];
-    item2.defaultTitleColor = [UIColor greenColor];
+    item2.backgroundColor = [UIColor colorWithHexString:@"#2ADCCB"];
     [items addObject:item2];
 
     ILSideScrollViewItem *item3 = [ILSideScrollViewItem item];
-    item3.defaultTitleColor = [UIColor purpleColor];
+    item3.backgroundColor = [UIColor colorWithHexString:@"#9ACD32"];
     [items addObject:item3];
 
     ILSideScrollViewItem *item4 = [ILSideScrollViewItem item];
-    item4.defaultTitleColor = [UIColor blueColor];
+    item4.backgroundColor = [UIColor colorWithHexString:@"#FFA500"];
     [items addObject:item4];
 
-    scroller1 = [[ILSideScrollView alloc] initWithFrame:
-                 CGRectMake(0,
-                            0,
-                            self.view.frame.size.width,
-                            100)];
-    [scroller1 populateSideScrollViewWithItems:items];
+    ILSideScrollViewItem *item5 = [ILSideScrollViewItem item];
+    item5.backgroundColor = [UIColor colorWithHexString:@"#6A5ACD"];
+    [items addObject:item5];
 
-    [self.view addSubview:scroller1];
+    [_scroller populateSideScrollViewWithItems:items];
 }
 
 @end

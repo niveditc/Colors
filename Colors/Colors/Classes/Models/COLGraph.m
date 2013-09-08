@@ -42,6 +42,10 @@
         }
     }
 
+    if (![graph isConnected]) {
+        return [COLGraph randomlyGenerateWithNumVertices:numVertices];
+    }
+
     return graph;
 }
 
@@ -99,8 +103,44 @@
     return YES;
 }
 
-- (BOOL)isConnected {
-#warning Implement BFS!
+- (BOOL)isConnected
+{
+    for (int i = 1; i < self.numVertices; i++) {
+        //BFS
+        NSMutableArray *queue = [NSMutableArray array];
+        [queue addObject:@(i)];
+
+        NSMutableArray *visited = [NSMutableArray array];
+
+        for (int j = 0; j < self.numVertices; j++) {
+            visited[j] = @(NO);
+        }
+
+        BOOL reached = NO;
+        while (queue.count > 0) {
+            NSInteger current = [[queue objectAtIndex:0] integerValue];
+            [queue removeObjectAtIndex:0];
+
+            if (current == 0) {
+                reached = YES;
+                break;
+            }
+            visited[current] = @(YES);
+
+            COLVertex *v = self.vertices[current];
+            for (int k = 0; k < v.neighbors.count; k++) {
+                NSInteger nghIdx = [v.neighbors[k] integerValue];
+                if (!visited[nghIdx]) {
+                    [queue addObject:@(k)];
+                }
+            }
+        }
+
+        //unless reached, vertex i is not connected to vertex 0 (not reached)
+        if (!reached) {
+            return NO;
+        }
+    }
     return YES;
 }
 
