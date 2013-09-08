@@ -113,6 +113,7 @@ body {
 }
 
 #playAgain {
+	cursor: pointer;
 	background-color: #25C6B6;
 	font-size: 20px;
 	color: white;
@@ -151,6 +152,7 @@ body {
 }
 
 #startGame {
+  cursor: pointer;
   background-color: #25C6B6;
   font-size: 20px;
   color: white;
