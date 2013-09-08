@@ -7,84 +7,76 @@
   <link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="js/login.js"></script>
+
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/graph.js"></script>
+  <script src="js/scoring.js"></script>
 </head>
 
 <body>
-    <div id="fb-root"></div>
-
-    <script>
-/*
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '195185947326022', // App ID
-        channelUrl : 'channel.php', // Channel File
-        status     : true, // check login status
-        cookie     : true, // enable cookies to allow the server to access the session
-        xfbml      : true  // parse XFBML
-      });
-
-  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
-  // for any authentication related change, such as login, logout or session refresh. This means that
-  // whenever someone who was previously logged out tries to log in again, the correct case below
-  // will be handled.
-  FB.Event.subscribe('auth.authResponseChange', function(response) {
-    // Here we specify what we do with the response anytime this event occurs.
-    if (response.status === 'connected') {
-      FB.api('/me', function(response) {
-        loginSuccess(response);
-      });
-
-  } else if (response.status === 'not_authorized') {
-      // In this case, the person is logged into Facebook, but not into the app, so we call
-      // FB.login() to prompt them to do so.
-      // In real-life usage, you wouldn't want to immediately prompt someone to login
-      // like this, for two reasons:
-      // (1) JavaScript created popup windows are blocked by most browsers unless they
-      // result from direct interaction from people using the app (such as a mouse click)
-      // (2) it is a bad experience to be continually prompted to login upon page load.
-      FB.login();
-  } else {
-      // In this case, the person is not logged into Facebook, so we call the login()
-      // function to prompt them to do so. Note that at this stage there is no indication
-      // of whether they are logged into the app. If they aren't then they'll see the Login
-      // dialog right after they log in to Facebook.
-      // The same caveats as above apply to the FB.login() call here.
-      FB.login();
-  }
-});
-};
-
-  // Load the SDK asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "http://connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
- }(document));
-
-  // Here we run a very simple test of the Graph API after login is successful.
-  // This testAPI() function is only called in those cases.
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Good to see you, ' + response.name + '.');
-    });
-  }
-*/
-</script>
-
-    <div id="mainTitle">
-      <img src="img/logo.png" />
+  <div id="header">
+    <div id="logo">
+      <img src="img/favicon.png" />
       <h1>Colors</h1>
     </div>
+<!--    <div id="user">
+      <img src="" />
+      <h2 id="name"></h2>
+      <h2 id="logout" onClick="logout();">Logout</h2>
+    </div> -->
+  </div>
 
-<!--
-    <div id="loginButton">
-      <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+	<canvas id="myCanvas" width="700" height="750">
+		No canvas available!
+	</canvas>
+
+  <h3 id="scoreTracker">Score: 0</h3>
+
+  <div id="rulesModal" class="modal">
+    <h1>Welcome to Colors!</h1>
+    <h2>Rules</h2>
+    <p>Dots connected by a line can't have the same color.</p>
+    <p>You have 30 seconds to complete each level.</p>
+    <p>Press 'P' to pause.</p>
+    <p>You get bonus points for using less than 5 colors.</p>
+    <div id="startGame">Start Game</div>
+    <p id="names">Created by <a href="http://raemadeline.com" target="_blank">Madeline Horowitz</a>, <a href="http://isaacl.net" target="_blank">Isaac Lim</a>, and Nivedita Chopra</p>
+  </div>
+
+  <div id="nextLevelModal" class="modal">
+    <h1></h1>
+    <p>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+    </p>
+    <h2></h2>
+  </div>
+
+  <div id="invalidColorModal" class="modal">
+    <h2>You can't have two neighbors of the same color</h2>
+  </div>
+
+  <div id="pauseModal" class="modal">
+    <h1>Paused</h1>
+    <h2>Press 'P' or Click Screen to Continue</h2>
+  </div>
+
+  <div id="endGameModal" class="modal">
+    <h1>Your time is up!</h1>
+    <h2></h2>
+    <div id="playAgain">
+      Play Again?
     </div>
--->
-</body>
+  </div>
 
+  <h3 id="timer"></h3>
+
+<script type="text/javascript" src="js/ui.js"></script>
+</body>
 </html>
