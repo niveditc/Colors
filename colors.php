@@ -59,7 +59,11 @@
   </div>
 
   <div id="endGameModal" class="modal">
-    <h2>Game Over</h2>
+    <h1>Game Over</h1>
+    <h2></h2>
+    <div id="playAgain">
+      Play Again?
+    </div>
   </div>
 
 <script type="text/javascript" src="js/ui.js"></script>
