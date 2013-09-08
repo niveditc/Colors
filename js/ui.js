@@ -288,6 +288,7 @@ function updateTime() {
 	if(game.time < 10000) {
 		$('#timer').html(game.time / 1000);
 	}
+
 	if(game.time <= 0) {
 		$('#timer').html('');
 		window.clearInterval(timeInt);
@@ -313,6 +314,7 @@ function winGame() {
 	$('#nextLevelModal').find('h1').html('Level ' + game.level);
 	$('#nextLevelModal').find('h2').html('Your score is ' + game.score + ' points');
 	$('#nextLevelModal').fadeIn(60);
+    $('#timer').html('');
 
 	setTimeout(function() {
 		$('#scoreTracker').html('Score: ' + game.score);
