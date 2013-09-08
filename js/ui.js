@@ -29,6 +29,13 @@ $('#startGame').click(function() {
 	timeInt = setInterval(function() {updateTime();}, 1000);
 });
 
+$('#playAgain').click(function() {
+	$('#endGameModal').fadeOut('60');
+	game = new Game();
+	renderFirstGraph(game.graph);
+	timeInt = setInterval(function() {updateTime();}, 1000);
+})
+
 function circle(ctx, cx, cy, radius) {
 	ctx.beginPath();
     ctx.arc(cx, cy, radius, 0, 2*Math.PI, true);
