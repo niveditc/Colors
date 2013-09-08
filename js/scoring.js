@@ -6,11 +6,13 @@ function determineColorsUsed(graph){
     }
 
     var numUsed = 0;
-    for(var i = 0; i < 5; i++) {
-        if(colors[i]) {
-            numUsed ++;
-        }
-    }
+    var numUsed = colors.reduce(function(count, cur){
+            if(cur){
+                return count + 1;
+            } else{
+                return count;
+            }
+        }, 0);
     return numUsed;
 }
 
