@@ -5,7 +5,7 @@ function Game() {
 	this.time = 30000;
 	this.paused = false;
 	this.score = 0;
-	this.user = JSON.parse(localStorage.COLORSUser);
+	//this.user = JSON.parse(localStorage.COLORSUser);
 
 	console.log(this.graph.toString());
 	//console.log("Logged in as: " + this.user.name + ", id: " + this.user.id);
@@ -16,22 +16,18 @@ var colors = ["#666666", "#FF6347", "#2ADCCB", "#9ACD32", "#FFA500", "#6A5ACD"];
 var radius = 30;
 var cRadius = 20;
 var line = 10;
+var timeInt;
 
 var game = new Game();
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-$(document).ready(function($) {
-	displayUserDetails();
-	renderFirstGraph(game.graph);
-  $('#rulesModal').show();
-});
-
 $('#startGame').click(function() {
     $('#rulesModal').fadeOut(60);
+    //displayUserDetails();
+	renderFirstGraph(game.graph);
+	timeInt = setInterval(function() {updateTime();}, 1000);
 });
-
-var timeInt = setInterval(function() {updateTime();}, 1000);
 
 function circle(ctx, cx, cy, radius) {
 	ctx.beginPath();
