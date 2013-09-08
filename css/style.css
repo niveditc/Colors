@@ -44,8 +44,8 @@ body {
 }
 
 #header #logo {
-    float: left;   
-    padding-left: 20px; 
+    float: left;
+    padding-left: 20px;
 }
     #header #logo img {
         float: left;
@@ -122,4 +122,16 @@ body {
 	padding: 15px;
 	border-radius: 48px;
 	margin: 35px auto;
+}
+
+#startGame {
+  background-color: #25C6B6;
+  font-size: 20px;
+  color: white;
+  width: 120px;
+  text-align: center;
+  display: block;
+  padding: 15px;
+  border-radius: 48px;
+  margin: 35px auto;
 }

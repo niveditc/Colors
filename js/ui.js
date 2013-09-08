@@ -2,7 +2,7 @@ function Game() {
 	this.graph = generateGraph(4);
 	this.activeColor = 1;
 	this.level = 1;
-	this.time = 45000;
+	this.time = 30000;
 	this.paused = false;
 	this.score = 0;
 	this.user = JSON.parse(localStorage.COLORSUser);
@@ -24,7 +24,12 @@ var ctx = canvas.getContext("2d");
 $(document).ready(function($) {
 	displayUserDetails();
 	renderFirstGraph(game.graph);
+  $('#rulesModal').show();
 });
+
+$('#startGame').click() {
+    $('#rulesModal').fadeOut(60);
+}
 
 var timeInt = setInterval(function() {updateTime();}, 1000);
 
@@ -131,7 +136,7 @@ function setLocs(i) {
 	var locArray = new Array();
 
 	//divide circle into i segments
-	var deg = 2*Math.PI / i; 
+	var deg = 2*Math.PI / i;
 
 	for(var j = 0; j < i; j++) {
 
@@ -151,9 +156,9 @@ function setLocs(i) {
 
 /* MOUSE EVENT */
 function onMouseDown(event) {
-    var x = event.pageX - canvas.offsetLeft; 
+    var x = event.pageX - canvas.offsetLeft;
     var y = event.pageY - canvas.offsetTop;
-    
+
     /* Check if Toggle Color Controls */
     for(var i = 1; i < colors.length; i++) {
     	if(inCircle(x, y, 700 - 50*i, 720, cRadius)) {
@@ -171,7 +176,7 @@ function onMouseDown(event) {
     	var V = game.graph.vertices[i];
 
     	if(inCircle(x, y, V.loc.x, V.loc.y, radius)) {
-    		
+
     		/* valid color placement */
     		if(updateColor(game.graph, i, game.activeColor)) {
     			updateColorDisplay(game.graph);
@@ -279,11 +284,11 @@ function updateTime() {
 		gameOver();
 	}
 }
- 
+
 function winGame() {
 	game.score += calculateScore(game.level, game.graph);
 	game.level ++;
-	game.time += 46000;
+	game.time += 31000;
 	$('#nextLevelModal').find('h1').html('Level ' + game.level);
 	$('#nextLevelModal').find('h2').html('You scored ' + game.score + ' points');
 	$('#nextLevelModal').fadeIn(60);
@@ -297,6 +302,6 @@ function winGame() {
 }
 
 function gameOver() {
-	$('#endGameModal').find('h2').html('You scored ' + game.score + ' points'); 
+	$('#endGameModal').find('h2').html('You scored ' + game.score + ' points');
 	$('#endGameModal').fadeIn(60);
 }

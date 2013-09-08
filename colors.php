@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="css/style.css">
 
   <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="js/graph.js"></script>
   <script src="js/scoring.js"></script>
@@ -34,6 +34,14 @@
 	</canvas>
 
   <h3 id="scoreTracker">Score: 0</h3>
+
+  <div id="rulesModal" class="modal">
+    <h1> Welcome to Colors! </h1>
+    <h2> Rules </h2>
+    <p> Dots connected by a line can't have the same color. You have 30 seconds to complete each level.</p>
+    <p> You get bonus points for not using all the colors </p>
+    <div id="startGame">Start Game</div>
+  </div>
 
   <div id="nextLevelModal" class="modal">
     <h1></h1>
