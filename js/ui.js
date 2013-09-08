@@ -301,10 +301,17 @@ function winGame() {
 	game.level ++;
 	game.time += 31000;
 
+  var star = $('.fontawesome-star').first();
+  var numStars = 5;
+  //reset all the stars to not active
+  for(var i = 0; i < numStars; i++, star = star.next().first()){
+      star.removeClass('active');
+  }
+
 	var activeStars = getBonus(game.graph);
 	console.log(activeStars);
 
-	var star = $('.fontawesome-star').first();
+	star = $('.fontawesome-star').first();
 	for(var i = 0; i < activeStars; i++) {
 		console.log(star);
 		star.addClass('active');
