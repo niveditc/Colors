@@ -68,7 +68,7 @@
   </div>
 
   <div id="endGameModal" class="modal">
-    <h1>Game Over</h1>
+    <h1>Your time is up!</h1>
     <h2></h2>
     <div id="playAgain">
       Play Again?

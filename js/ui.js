@@ -310,7 +310,7 @@ function winGame() {
 	}
 
 	$('#nextLevelModal').find('h1').html('Level ' + game.level);
-	$('#nextLevelModal').find('h2').html('You scored ' + game.score + ' points');
+	$('#nextLevelModal').find('h2').html('Your score is ' + game.score + ' points');
 	$('#nextLevelModal').fadeIn(60);
 
 	setTimeout(function() {
@@ -322,6 +322,6 @@ function winGame() {
 }
 
 function gameOver() {
-	$('#endGameModal').find('h2').html('You scored ' + game.score + ' points');
+	$('#endGameModal').find('h2').html('Your score is ' + game.score + ' points');
 	$('#endGameModal').fadeIn(60);
 }
