@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
 body {
     font-family: 'Cabin', sans-serif;
     background-image: url("../img/noisy_grid.png");
@@ -35,7 +42,7 @@ body {
 #scoreTracker {
 	font-size: 24px;
 	position: fixed;
-	bottom: 10px;
+	top: 10px;
 	right: 10px;
 }
 
@@ -93,6 +100,7 @@ body {
 	background-color: rgba(255, 255, 255, 0.65);
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	z-index: 100;
 }
 
 .modal h1 {
@@ -162,4 +170,19 @@ body {
   padding: 15px;
   border-radius: 48px;
   margin: 45px auto;
+}
+
+#nextLevelModal p {
+	text-align: center;
+	margin: 20px;
+}
+
+.fontawesome-star {
+	font-size: 24px;
+	padding: 10px;
+	color: #C0C0C0;
+}
+
+.fontawesome-star.active {
+	color: #FFA500;
 }

@@ -4,17 +4,17 @@ function determineColorsUsed(graph){
         var curV = graph.vertices[i];
         colors[curV.color] = true;
     }
-    var numUsed = colors.reduce(function(count, cur){
-            if(cur){
-                return count++
-            } else{
-                return count;
-            }
-        }, 0);
+
+    var numUsed = 0;
+    for(var i = 0; i < 5; i++) {
+        if(colors[i]) {
+            numUsed ++;
+        }
+    }
     return numUsed;
 }
 
-//Nuumber of colors left are the bonus
+//Number of colors left are the bonus
 function getBonus(graph){
     var numColors = 5;
     return numColors - determineColorsUsed(graph);

@@ -202,6 +202,8 @@ function onMouseDown(event) {
     			$('#invalidColorModal').fadeIn(60);
     			setTimeout(function() {
 					$('#invalidColorModal').fadeOut(60);
+					game.score -= 10;
+					$('#scoreTracker').html('Score: ' + game.score);
 				}, 1000);
     		}
     	}
@@ -295,16 +297,27 @@ function winGame() {
 	game.score += calculateScore(game.level, game.graph);
 	game.level ++;
 	game.time += 31000;
+
+	var activeStars = getBonus(game.graph);
+	console.log(activeStars);
+
+	var star = $('.fontawesome-star').first();
+	for(var i = 0; i < activeStars; i++) {
+		console.log(star);
+		star.addClass('active');
+		star = star.next().first();
+	}
+
 	$('#nextLevelModal').find('h1').html('Level ' + game.level);
 	$('#nextLevelModal').find('h2').html('You scored ' + game.score + ' points');
 	$('#nextLevelModal').fadeIn(60);
 
-	setTimeout(function() {
-		$('#scoreTracker').html('Score: ' + game.score);
-		$('#nextLevelModal').fadeOut(60);
-		game.graph = generateGraph(3 + game.level);
-		renderFirstGraph(game.graph);
-	}, 1000);
+	// setTimeout(function() {
+	// 	$('#scoreTracker').html('Score: ' + game.score);
+	// 	$('#nextLevelModal').fadeOut(60);
+	// 	game.graph = generateGraph(3 + game.level);
+	// 	renderFirstGraph(game.graph);
+	// }, 1000);
 }
 
 function gameOver() {

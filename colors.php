@@ -40,6 +40,7 @@
     <h2>Rules</h2>
     <p>Dots connected by a line can't have the same color.</p>
     <p>You have 30 seconds to complete each level.</p>
+    <p>Press 'P' to pause.</p>
     <p>You get bonus points for using less than 5 colors.</p>
     <div id="startGame">Start Game</div>
   </div>
