@@ -75,6 +75,8 @@
     </div>
   </div>
 
+  <h3 id="timer"></h3>
+
 <script type="text/javascript" src="js/ui.js"></script>
 </body>
 </html>

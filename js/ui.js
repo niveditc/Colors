@@ -285,10 +285,11 @@ function inCircle(x1, y1, x2, y2, r) {
 
 function updateTime() {
 	game.time -= 1000;
-	if(game.time < 6000) {
-		console.log(game.time);
+	if(game.time < 10000) {
+		$('#timer').html(game.time / 1000);
 	}
 	if(game.time <= 0) {
+		$('#timer').html('');
 		window.clearInterval(timeInt);
 		gameOver();
 	}

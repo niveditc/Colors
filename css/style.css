@@ -193,3 +193,11 @@ body {
 	bottom: 20px;
 	left: 20px;
 }
+
+#timer {
+	font-size: 250px;
+	color: #FF6347;
+	position: fixed;
+	right: 30px;
+	top: 100px;
+}
