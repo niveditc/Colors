@@ -22,11 +22,11 @@
       <img src="img/favicon.png" />
       <h1>Colors</h1>
     </div>
-    <div id="user">
+<!--    <div id="user">
       <img src="" />
       <h2 id="name"></h2>
       <h2 id="logout" onClick="logout();">Logout</h2>
-    </div>
+    </div> -->
   </div>
 
 	<canvas id="myCanvas" width="700" height="750">
