@@ -43,6 +43,7 @@
     <p>Press 'P' to pause.</p>
     <p>You get bonus points for using less than 5 colors.</p>
     <div id="startGame">Start Game</div>
+    <p id="names">Created by <a href="http://raemadeline.com" target="_blank">Madeline Horowitz</a>, <a href="http://isaacl.net" target="_blank">Isaac Lim</a>, and Nivedita Chopra</p>
   </div>
 
   <div id="nextLevelModal" class="modal">
