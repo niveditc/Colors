@@ -27,9 +27,9 @@ $(document).ready(function($) {
   $('#rulesModal').show();
 });
 
-$('#startGame').click() {
+$('#startGame').click(function() {
     $('#rulesModal').fadeOut(60);
-}
+});
 
 var timeInt = setInterval(function() {updateTime();}, 1000);
 
