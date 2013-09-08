@@ -47,6 +47,13 @@
 
   <div id="nextLevelModal" class="modal">
     <h1></h1>
+    <p>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+      <span class="fontawesome-star"></span>
+    </p>
     <h2></h2>
   </div>
 
