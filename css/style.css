@@ -180,11 +180,12 @@ body {
 .fontawesome-star {
 	font-size: 24px;
 	padding: 10px;
-	color: #C0C0C0;
+	color: #FFA500;
+	display: none;
 }
 
 .fontawesome-star.active {
-	color: #FFA500;
+	display: inline;
 }
 
 #names {

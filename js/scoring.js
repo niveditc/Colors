@@ -2,7 +2,7 @@ function determineColorsUsed(graph){
     var colors = [false, false, false, false, false]; //<= 5 colors always
     for(var i = 0; i < graph.numVertices; i++){
         var curV = graph.vertices[i];
-        colors[curV.color] = true;
+        colors[curV.color - 1] = true;
     }
 
     var numUsed = 0;
@@ -13,6 +13,7 @@ function determineColorsUsed(graph){
                 return count;
             }
         }, 0);
+    console.log("Bonus " + (5 - numUsed));;
     return numUsed;
 }
 
