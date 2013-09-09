@@ -1,6 +1,6 @@
 Colors (PennApps)
 ======
 
-For the awesome graph coloring game :)
+A simplistic graph coloring, time-pressured game.
 
 http://colorsapp.herokuapp.com
