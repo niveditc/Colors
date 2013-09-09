@@ -16,6 +16,13 @@
 		6A046CE917DAEDC70094AC98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A046CE817DAEDC70094AC98 /* Images.xcassets */; };
 		6A046D0917DAEF9E0094AC98 /* COLVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0817DAEF9E0094AC98 /* COLVertex.m */; };
 		6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0B17DAF1270094AC98 /* COLGraph.m */; };
+		6A4FE9E617DBACF800E00982 /* COLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E517DBACF800E00982 /* COLGraphView.m */; };
+		6A4FE9E917DBAEB200E00982 /* COLVertexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E817DBAEB200E00982 /* COLVertexView.m */; };
+		6A4FE9EF17DBC9C000E00982 /* COLEdgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9EE17DBC9C000E00982 /* COLEdgeView.m */; };
+		6A4FE9F217DBE7C100E00982 /* COLColorControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9F117DBE7C100E00982 /* COLColorControls.m */; };
+		6A4FE9F817DBE88F00E00982 /* ILSideScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9F517DBE88F00E00982 /* ILSideScrollView.m */; };
+		6A4FE9F917DBE88F00E00982 /* ILSideScrollViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9F717DBE88F00E00982 /* ILSideScrollViewItem.m */; };
+		6A4FE9FD17DBE94E00E00982 /* UIColor+ILHexStringColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9FC17DBE94E00E00982 /* UIColor+ILHexStringColor.m */; };
 		6A86F0DF17DBA08D003372B7 /* COLStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0DE17DBA08D003372B7 /* COLStartViewController.m */; };
 		6A86F0E317DBA498003372B7 /* COLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0E217DBA498003372B7 /* COLFont.m */; };
 		6A86F0E617DBA5BA003372B7 /* COLGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86F0E517DBA5BA003372B7 /* COLGameViewController.m */; };
@@ -38,6 +45,20 @@
 		6A046D0817DAEF9E0094AC98 /* COLVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLVertex.m; sourceTree = "<group>"; };
 		6A046D0A17DAF1270094AC98 /* COLGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLGraph.h; sourceTree = "<group>"; };
 		6A046D0B17DAF1270094AC98 /* COLGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraph.m; sourceTree = "<group>"; };
+		6A4FE9E417DBACF800E00982 /* COLGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLGraphView.h; sourceTree = "<group>"; };
+		6A4FE9E517DBACF800E00982 /* COLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraphView.m; sourceTree = "<group>"; };
+		6A4FE9E717DBAEB200E00982 /* COLVertexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLVertexView.h; sourceTree = "<group>"; };
+		6A4FE9E817DBAEB200E00982 /* COLVertexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLVertexView.m; sourceTree = "<group>"; };
+		6A4FE9ED17DBC9C000E00982 /* COLEdgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLEdgeView.h; sourceTree = "<group>"; };
+		6A4FE9EE17DBC9C000E00982 /* COLEdgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLEdgeView.m; sourceTree = "<group>"; };
+		6A4FE9F017DBE7C100E00982 /* COLColorControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLColorControls.h; sourceTree = "<group>"; };
+		6A4FE9F117DBE7C100E00982 /* COLColorControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLColorControls.m; sourceTree = "<group>"; };
+		6A4FE9F417DBE88F00E00982 /* ILSideScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSideScrollView.h; sourceTree = "<group>"; };
+		6A4FE9F517DBE88F00E00982 /* ILSideScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSideScrollView.m; sourceTree = "<group>"; };
+		6A4FE9F617DBE88F00E00982 /* ILSideScrollViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSideScrollViewItem.h; sourceTree = "<group>"; };
+		6A4FE9F717DBE88F00E00982 /* ILSideScrollViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSideScrollViewItem.m; sourceTree = "<group>"; };
+		6A4FE9FB17DBE94E00E00982 /* UIColor+ILHexStringColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ILHexStringColor.h"; sourceTree = "<group>"; };
+		6A4FE9FC17DBE94E00E00982 /* UIColor+ILHexStringColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ILHexStringColor.m"; sourceTree = "<group>"; };
 		6A86F0DD17DBA08D003372B7 /* COLStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLStartViewController.h; sourceTree = "<group>"; };
 		6A86F0DE17DBA08D003372B7 /* COLStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLStartViewController.m; sourceTree = "<group>"; };
 		6A86F0E117DBA498003372B7 /* COLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLFont.h; sourceTree = "<group>"; };
@@ -115,6 +136,7 @@
 				6A046CE517DAEDC70094AC98 /* COLAppDelegate.h */,
 				6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */,
 				6A046D0617DAEF890094AC98 /* Models */,
+				6A4FE9E317DBACE200E00982 /* Views */,
 				6A86F0DC17DBA080003372B7 /* Controllers */,
 				6A86F0E017DBA48D003372B7 /* Helpers */,
 			);
@@ -133,6 +155,41 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6A4FE9E317DBACE200E00982 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6A4FE9E417DBACF800E00982 /* COLGraphView.h */,
+				6A4FE9E517DBACF800E00982 /* COLGraphView.m */,
+				6A4FE9E717DBAEB200E00982 /* COLVertexView.h */,
+				6A4FE9E817DBAEB200E00982 /* COLVertexView.m */,
+				6A4FE9ED17DBC9C000E00982 /* COLEdgeView.h */,
+				6A4FE9EE17DBC9C000E00982 /* COLEdgeView.m */,
+				6A4FE9F017DBE7C100E00982 /* COLColorControls.h */,
+				6A4FE9F117DBE7C100E00982 /* COLColorControls.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6A4FE9F317DBE88F00E00982 /* ILSideScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				6A4FE9F417DBE88F00E00982 /* ILSideScrollView.h */,
+				6A4FE9F517DBE88F00E00982 /* ILSideScrollView.m */,
+				6A4FE9F617DBE88F00E00982 /* ILSideScrollViewItem.h */,
+				6A4FE9F717DBE88F00E00982 /* ILSideScrollViewItem.m */,
+			);
+			path = ILSideScrollView;
+			sourceTree = "<group>";
+		};
+		6A4FE9FA17DBE94E00E00982 /* UIColor+ILHexStringColor */ = {
+			isa = PBXGroup;
+			children = (
+				6A4FE9FB17DBE94E00E00982 /* UIColor+ILHexStringColor.h */,
+				6A4FE9FC17DBE94E00E00982 /* UIColor+ILHexStringColor.m */,
+			);
+			path = "UIColor+ILHexStringColor";
+			sourceTree = "<group>";
+		};
 		6A86F0DC17DBA080003372B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +204,8 @@
 		6A86F0E017DBA48D003372B7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6A4FE9FA17DBE94E00E00982 /* UIColor+ILHexStringColor */,
+				6A4FE9F317DBE88F00E00982 /* ILSideScrollView */,
 				6A86F0E117DBA498003372B7 /* COLFont.h */,
 				6A86F0E217DBA498003372B7 /* COLFont.m */,
 			);
@@ -222,10 +281,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A4FE9EF17DBC9C000E00982 /* COLEdgeView.m in Sources */,
+				6A4FE9E917DBAEB200E00982 /* COLVertexView.m in Sources */,
 				6A86F0DF17DBA08D003372B7 /* COLStartViewController.m in Sources */,
 				6A046CE317DAEDC70094AC98 /* main.m in Sources */,
 				6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */,
+				6A4FE9F817DBE88F00E00982 /* ILSideScrollView.m in Sources */,
+				6A4FE9F917DBE88F00E00982 /* ILSideScrollViewItem.m in Sources */,
+				6A4FE9FD17DBE94E00E00982 /* UIColor+ILHexStringColor.m in Sources */,
 				6A046D0917DAEF9E0094AC98 /* COLVertex.m in Sources */,
+				6A4FE9E617DBACF800E00982 /* COLGraphView.m in Sources */,
+				6A4FE9F217DBE7C100E00982 /* COLColorControls.m in Sources */,
 				6A86F0E617DBA5BA003372B7 /* COLGameViewController.m in Sources */,
 				6A046CE717DAEDC70094AC98 /* COLAppDelegate.m in Sources */,
 				6A86F0E317DBA498003372B7 /* COLFont.m in Sources */,

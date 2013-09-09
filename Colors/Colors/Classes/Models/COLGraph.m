@@ -18,6 +18,7 @@
         NSMutableArray *tmpVertices = [NSMutableArray array];
         for (int i = 0; i < numVertices; i++) {
             COLVertex *vertex = [[COLVertex alloc] init];
+            vertex.index = i;
             [tmpVertices addObject:vertex];
         }
         self.vertices = tmpVertices;
@@ -25,20 +26,27 @@
     return self;
 }
 
-- (void)randomlyGenerate
++ (instancetype)randomlyGenerateWithNumVertices:(NSInteger)numVertices
 {
-    NSInteger numEdges = self.numVertices;
+    COLGraph *graph = [[COLGraph alloc] initWithNumVertices:numVertices];
+    NSInteger numEdges = graph.numVertices;
     NSInteger edgeCount = 0;
 
     while (edgeCount < numEdges) {
         COLVertex *v1, *v2;
-        [self twoRandVerticesFirst:&v1 second:&v2];
+        [graph twoRandVerticesFirst:&v1 second:&v2];
 
         if (![v1 isNeighborOf:v2]) {
             [v1 joinWithEdge:v2]; // Same as [v2 joinWithEdge:v1];
             edgeCount++;
         }
     }
+
+    if (![graph isConnected]) {
+        return [COLGraph randomlyGenerateWithNumVertices:numVertices];
+    }
+
+    return graph;
 }
 
 - (BOOL)checkNeighborsOfVertex:(COLVertex *)vertex
@@ -95,8 +103,44 @@
     return YES;
 }
 
-- (BOOL)isConnected {
-#warning Implement BFS!
+- (BOOL)isConnected
+{
+    for (int i = 1; i < self.numVertices; i++) {
+        //BFS
+        NSMutableArray *queue = [NSMutableArray array];
+        [queue addObject:@(i)];
+
+        NSMutableArray *visited = [NSMutableArray array];
+
+        for (int j = 0; j < self.numVertices; j++) {
+            visited[j] = @(NO);
+        }
+
+        BOOL reached = NO;
+        while (queue.count > 0) {
+            NSInteger current = [[queue objectAtIndex:0] integerValue];
+            [queue removeObjectAtIndex:0];
+
+            if (current == 0) {
+                reached = YES;
+                break;
+            }
+            visited[current] = @(YES);
+
+            COLVertex *v = self.vertices[current];
+            for (int k = 0; k < v.neighbors.count; k++) {
+                NSInteger nghIdx = [v.neighbors[k] integerValue];
+                if (!visited[nghIdx]) {
+                    [queue addObject:@(k)];
+                }
+            }
+        }
+
+        //unless reached, vertex i is not connected to vertex 0 (not reached)
+        if (!reached) {
+            return NO;
+        }
+    }
     return YES;
 }
 
@@ -132,7 +176,6 @@
 - (NSString *)description
 {
     NSString *str = [NSString stringWithFormat:@"No. of vertices: %d", self.numVertices];
-#warning Does this actually print vertices?
     str = [str stringByAppendingFormat:@"Vertices: %@", self.vertices];
     return str;
 }
