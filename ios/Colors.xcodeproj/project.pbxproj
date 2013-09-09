@@ -13,9 +13,9 @@
 		6A046CE117DAEDC70094AC98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A046CDF17DAEDC70094AC98 /* InfoPlist.strings */; };
 		6A046CE317DAEDC70094AC98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046CE217DAEDC70094AC98 /* main.m */; };
 		6A046CE717DAEDC70094AC98 /* COLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */; };
-		6A046CE917DAEDC70094AC98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A046CE817DAEDC70094AC98 /* Images.xcassets */; };
 		6A046D0917DAEF9E0094AC98 /* COLVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0817DAEF9E0094AC98 /* COLVertex.m */; };
 		6A046D0C17DAF1270094AC98 /* COLGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A046D0B17DAF1270094AC98 /* COLGraph.m */; };
+		6A35DE3417DD4F9F00D0199B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A35DE3317DD4F9F00D0199B /* Images.xcassets */; };
 		6A4FE9E617DBACF800E00982 /* COLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E517DBACF800E00982 /* COLGraphView.m */; };
 		6A4FE9E917DBAEB200E00982 /* COLVertexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9E817DBAEB200E00982 /* COLVertexView.m */; };
 		6A4FE9EF17DBC9C000E00982 /* COLEdgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4FE9EE17DBC9C000E00982 /* COLEdgeView.m */; };
@@ -37,12 +37,12 @@
 		6A046CE417DAEDC70094AC98 /* Colors-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colors-Prefix.pch"; sourceTree = "<group>"; };
 		6A046CE517DAEDC70094AC98 /* COLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COLAppDelegate.h; sourceTree = "<group>"; };
 		6A046CE617DAEDC70094AC98 /* COLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COLAppDelegate.m; sourceTree = "<group>"; };
-		6A046CE817DAEDC70094AC98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6A046CEF17DAEDC70094AC98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6A046D0717DAEF9E0094AC98 /* COLVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLVertex.h; sourceTree = "<group>"; };
 		6A046D0817DAEF9E0094AC98 /* COLVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLVertex.m; sourceTree = "<group>"; };
 		6A046D0A17DAF1270094AC98 /* COLGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLGraph.h; sourceTree = "<group>"; };
 		6A046D0B17DAF1270094AC98 /* COLGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraph.m; sourceTree = "<group>"; };
+		6A35DE3317DD4F9F00D0199B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6A4FE9E417DBACF800E00982 /* COLGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLGraphView.h; sourceTree = "<group>"; };
 		6A4FE9E517DBACF800E00982 /* COLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COLGraphView.m; sourceTree = "<group>"; };
 		6A4FE9E717DBAEB200E00982 /* COLVertexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COLVertexView.h; sourceTree = "<group>"; };
@@ -79,7 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				6A046D0517DAEE500094AC98 /* Classes */,
-				6A046CDC17DAEDC70094AC98 /* Colors */,
+				6A35DE3217DD4F9F00D0199B /* Resources */,
+				6A046CDD17DAEDC70094AC98 /* Supporting Files */,
 				6A046CD517DAEDC70094AC98 /* Frameworks */,
 				6A046CD417DAEDC70094AC98 /* Products */,
 			);
@@ -104,15 +105,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6A046CDC17DAEDC70094AC98 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				6A046CE817DAEDC70094AC98 /* Images.xcassets */,
-				6A046CDD17DAEDC70094AC98 /* Supporting Files */,
-			);
-			path = Colors;
-			sourceTree = "<group>";
-		};
 		6A046CDD17DAEDC70094AC98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +114,7 @@
 				6A046CE417DAEDC70094AC98 /* Colors-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		6A046D0517DAEE500094AC98 /* Classes */ = {
@@ -147,6 +140,15 @@
 				6A046D0B17DAF1270094AC98 /* COLGraph.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6A35DE3217DD4F9F00D0199B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A35DE3317DD4F9F00D0199B /* Images.xcassets */,
+			);
+			name = Resources;
+			path = Colors/Resources;
 			sourceTree = "<group>";
 		};
 		6A4FE9E317DBACE200E00982 /* Views */ = {
@@ -251,8 +253,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A35DE3417DD4F9F00D0199B /* Images.xcassets in Resources */,
 				6A046CE117DAEDC70094AC98 /* InfoPlist.strings in Resources */,
-				6A046CE917DAEDC70094AC98 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
